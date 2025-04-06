@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homeverse - Find your dream house</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link - load critical CSS first
+  -->
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  <!-- Feature-specific CSS -->
+  <link rel="stylesheet" href="/assets/css/wishlist.css">
+  <link rel="stylesheet" href="/assets/css/enquiry.css">
+  <link rel="stylesheet" href="/assets/css/service-actions.css">
+  <link rel="stylesheet" href="/assets/css/amenities.css">
+  <link rel="stylesheet" href="/assets/css/location.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header">
+
+    <div class="overlay"></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+
+          <li>
+            <a href="mailto:info@homeverse.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <span>info@homeverse.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-top-link">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>15/A, Nest Tower, NYC</address>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <ul class="header-top-social-list">
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <button class="header-top-btn" onclick="window.location.href='add-listing.html'">Add Listing</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <div class="navbar-top">
+            <a href="#" class="logo">
+              <img src="./assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+          </div>
+
+          <ul class="navbar-list">
+            <li>
+              <a href="index.html" class="navbar-link">Home</a>
+            </li>
+            <li>
+              <a href="about.html" class="navbar-link">About</a>
+            </li>
+            <li>
+              <a href="service.html" class="navbar-link">Service</a>
+            </li>
+            <li>
+              <a href="property.html" class="navbar-link">Property</a>
+            </li>
+            <li>
+              <a href="properties-map.html" class="navbar-link">Map View</a>
+            </li>
+            <li>
+              <a href="3d-models.html" class="navbar-link">3D Models</a>
+            </li>
+            <li>
+              <a href="blog.html" class="navbar-link">Blog</a>
+            </li>
+            <li>
+              <a href="contact.html" class="navbar-link">Contact</a>
+            </li>
+            <li>
+              <a href="logout.html" class="navbar-link">Logout</a>
+            </li>
+            <li>
+              <a href="api-test.html" class="navbar-link">API Test</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-bottom-actions">
+          <button class="header-bottom-actions-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+            <div class="profile-dropdown">
+              <a href="profile.html" class="dropdown-link">My Profile</a>
+              <a href="favorites.html" class="dropdown-link">Saved Homes</a>
+              <a href="settings.html" class="dropdown-link">Settings</a>
+              <a href="logout.html" class="dropdown-link">Logout</a>
+            </div>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Wishlist">
+            <ion-icon name="heart-outline"></ion-icon>
+          </button>
+
+          <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Wishlist Sidebar -->
+  <div class="wishlist-sidebar">
+    <div class="wishlist-header">
+      <h3 class="wishlist-title">Your Wishlist</h3>
+      <button class="wishlist-close-btn">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+    </div>
+    <div class="wishlist-content">
+      <div class="wishlist-empty">Your wishlist is empty</div>
+      <div class="wishlist-items"></div>
+    </div>
+    <div class="wishlist-footer">
+      <div class="wishlist-total">
+        <div class="wishlist-total-label">Total Value:</div>
+        <div class="wishlist-total-value">$0</div>
+      </div>
+      <div class="wishlist-actions">
+        <button class="wishlist-button contact-agents-btn">Contact Agents</button>
+        <button class="wishlist-button clear-wishlist-btn">Clear Wishlist</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle">
+              <ion-icon name="home"></ion-icon>
+
+              <span>Real Estate Agency</span>
+            </p>
+
+            <h2 class="h1 hero-title">Find Your Dream House By Us</h2>
+
+            <p class="hero-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+            </p>
+
+            <a href="property-search.html" class="btn">Find Properties</a>
+            
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="about" id="about">
+        <div class="container">
+
+          <figure class="about-banner">
+            <img src="/assets/images/about-banner-1.png" alt="House interior">
+
+            <img src="/assets/images/about-banner-2.jpg" alt="House interior" class="abs-img">
+          </figure>
+
+          <div class="about-content">
+
+            <p class="section-subtitle">About Us</p>
+
+            <h2 class="h2 section-title">The Leading Real Estate Rental Marketplace.</h2>
+
+            <p class="about-text">
+              Over 39,000 people work for us in more than 70 countries all over the This breadth of global coverage,
+              combined with
+              specialist services
+            </p>
+
+            <ul class="about-list">
+
+              <li class="about-item">
+                <div class="about-item-icon">
+                  <ion-icon name="home-outline"></ion-icon>
+                </div>
+
+                <p class="about-item-text">Smart Home Design</p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-item-icon">
+                  <ion-icon name="leaf-outline"></ion-icon>
+                </div>
+
+                <p class="about-item-text">Beautiful Scene Around</p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-item-icon">
+                  <ion-icon name="wine-outline"></ion-icon>
+                </div>
+
+                <p class="about-item-text">Exceptional Lifestyle</p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-item-icon">
+                  <ion-icon name="shield-checkmark-outline"></ion-icon>
+                </div>
+
+                <p class="about-item-text">Complete 24/7 Security</p>
+              </li>
+
+            </ul>
+
+            <p class="callout">
+              "Enimad minim veniam quis nostrud exercitation
+              llamco laboris. Lorem ipsum dolor sit amet"
+            </p>
+
+            <a href="#service" class="btn">Our Services</a>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="service" id="service">
+        <div class="container">
+
+          <p class="section-subtitle">Our Services</p>
+
+          <h2 class="h2 section-title">Our Main Focus</h2>
+
+          <ul class="service-list">
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="/assets/images/service-1.png" alt="Buy a home icon">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <a href="#">Buy a Home</a>
+                </h3>
+
+                <p class="card-text">
+                  With over 1 million+ homes for sale available on our platform, we can match you with your perfect dream home. Our expert agents will guide you through every step of the buying process.
+                </p>
+
+                <div class="card-actions">
+                  <a href="#property" class="card-link" data-action="buy">
+                    <span>Explore Properties</span>
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </a>
+                  
+                  <a href="#" class="card-link enquiry-link" data-service="Buy a home">
+                    <span>Make An Enquiry</span>
+                    <ion-icon name="chatbubble-outline"></ion-icon>
+                  </a>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="/assets/images/service-2.png" alt="Rent a home icon">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <a href="#">Rent a Home</a>
+                </h3>
+
+                <p class="card-text">
+                  Find the perfect rental property from our extensive listings. Whether you're looking for a short-term or long-term lease, we have options to suit every lifestyle and budget.
+                </p>
+
+                <div class="card-actions">
+                  <a href="#property" class="card-link" data-action="rent">
+                    <span>Browse Rentals</span>
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </a>
+                  
+                  <a href="#" class="card-link enquiry-link" data-service="Rent a home">
+                    <span>Make An Enquiry</span>
+                    <ion-icon name="chatbubble-outline"></ion-icon>
+                  </a>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="/assets/images/service-3.png" alt="Sell a home icon">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <a href="#">Sell a Home</a>
+                </h3>
+
+                <p class="card-text">
+                  Ready to sell your property? Our experienced agents will help you get the best value for your home. We offer professional photography, 3D tours, and targeted marketing strategies.
+                </p>
+
+                <div class="card-actions">
+                  <a href="#" class="card-link" data-action="list">
+                    <span>List Your Property</span>
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </a>
+                  
+                  <a href="#" class="card-link enquiry-link" data-service="Sell a home">
+                    <span>Make An Enquiry</span>
+                    <ion-icon name="chatbubble-outline"></ion-icon>
+                  </a>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #PROPERTY
+      -->
+
+      <section class="property" id="property">
+        <div class="container">
+
+          <p class="section-subtitle">Properties</p>
+
+          <h2 class="h2 section-title">Featured Listings</h2>
+
+          <ul class="property-list has-scrollbar">
+
+            <li>
+              <div class="property-card" data-id="property-1" data-lat="41.8781" data-lng="-87.6298">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="/assets/images/property-1.jpg" alt="New Apartment Nice View" class="w-100">
+                  </a>
+
+                  <div class="card-badge green">For Rent</div>
+
+                  <div class="banner-actions">
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="location"></ion-icon>
+
+                      <address>Belmont Gardens, Chicago</address>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="camera"></ion-icon>
+
+                      <span>4</span>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="cube"></ion-icon>
+
+                      <span>3D</span>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-price">
+                    <strong>$34,900</strong>/Month
+                  </div>
+
+                  <h3 class="h3 card-title">
+                    <a href="property-details.html">New Apartment Nice View</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood
+                  </p>
+
+                  <ul class="card-list">
+
+                    <li class="card-item">
+                      <strong>3</strong>
+
+                      <ion-icon name="bed-outline"></ion-icon>
+
+                      <span>Bedrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>2</strong>
+
+                      <ion-icon name="man-outline"></ion-icon>
+
+                      <span>Bathrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>3450</strong>
+
+                      <ion-icon name="square-outline"></ion-icon>
+
+                      <span>Square Ft</span>
+                    </li>
+
+                  </ul>
+
+                  <div class="card-footer">
+                    <div class="card-buttons">
+                      <a href="property-details.html" class="card-btn">Details</a>
+                      <a href="property-3d-view.html?id=1" class="card-btn">3D View</a>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                  <div class="card-author">
+
+                    <figure class="author-avatar">
+                      <img src="/assets/images/author.jpg" alt="William Seklo" class="w-100">
+                    </figure>
+
+                    <div>
+                      <p class="author-name">
+                        <a href="#">William Seklo</a>
+                      </p>
+
+                      <p class="author-title">Estate Agents</p>
+                    </div>
+
+                  </div>
+
+                  <div class="card-footer-actions">
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="resize-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="options-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="add-circle-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="property-card" data-id="property-5" data-lat="33.4484" data-lng="-112.0740">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="/assets/images/property-1.jpg" alt="Luxury Penthouse in Phoenix" class="w-100">
+                  </a>
+
+                  <div class="card-badge orange">For Sale</div>
+
+                  <div class="banner-actions">
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="location"></ion-icon>
+
+                      <address>Downtown, Phoenix</address>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="camera"></ion-icon>
+
+                      <span>8</span>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="cube"></ion-icon>
+
+                      <span>3D</span>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-price">
+                    <strong>$845,000</strong>
+                  </div>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Luxury Penthouse in Phoenix</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Stunning penthouse with panoramic city views, private rooftop terrace, and premium finishes throughout
+                  </p>
+
+                  <ul class="card-list">
+
+                    <li class="card-item">
+                      <strong>4</strong>
+
+                      <ion-icon name="bed-outline"></ion-icon>
+
+                      <span>Bedrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>3.5</strong>
+
+                      <ion-icon name="man-outline"></ion-icon>
+
+                      <span>Bathrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>4200</strong>
+
+                      <ion-icon name="square-outline"></ion-icon>
+
+                      <span>Square Ft</span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="card-footer">
+
+                  <div class="card-author">
+
+                    <figure class="author-avatar">
+                      <img src="/assets/images/author.jpg" alt="William Seklo" class="w-100">
+                    </figure>
+
+                    <div>
+                      <p class="author-name">
+                        <a href="#">Sarah Johnson</a>
+                      </p>
+
+                      <p class="author-title">Luxury Specialist</p>
+                    </div>
+
+                  </div>
+
+                  <div class="card-footer-actions">
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="resize-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="options-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="add-circle-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="property-card" data-id="property-6" data-lat="39.9526" data-lng="-75.1652">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="/assets/images/property-2.jpg" alt="Historic Townhouse in Philadelphia" class="w-100">
+                  </a>
+
+                  <div class="card-badge green">For Rent</div>
+
+                  <div class="banner-actions">
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="location"></ion-icon>
+
+                      <address>Old City, Philadelphia</address>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="camera"></ion-icon>
+
+                      <span>6</span>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="cube"></ion-icon>
+
+                      <span>3D</span>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-price">
+                    <strong>$5,200</strong>/Month
+                  </div>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Historic Townhouse in Philadelphia</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Beautifully restored 19th century townhouse with original details, modern amenities, and private garden
+                  </p>
+
+                  <ul class="card-list">
+
+                    <li class="card-item">
+                      <strong>3</strong>
+
+                      <ion-icon name="bed-outline"></ion-icon>
+
+                      <span>Bedrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>2.5</strong>
+
+                      <ion-icon name="man-outline"></ion-icon>
+
+                      <span>Bathrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>2800</strong>
+
+                      <ion-icon name="square-outline"></ion-icon>
+
+                      <span>Square Ft</span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="card-footer">
+
+                  <div class="card-author">
+
+                    <figure class="author-avatar">
+                      <img src="/assets/images/author.jpg" alt="William Seklo" class="w-100">
+                    </figure>
+
+                    <div>
+                      <p class="author-name">
+                        <a href="#">Michael Chen</a>
+                      </p>
+
+                      <p class="author-title">Historic Properties</p>
+                    </div>
+
+                  </div>
+
+                  <div class="card-footer-actions">
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="resize-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="options-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="add-circle-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="property-card" data-id="property-7" data-lat="47.6062" data-lng="-122.3321">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="/assets/images/property-3.jpg" alt="Modern Waterfront Condo" class="w-100">
+                  </a>
+
+                  <div class="card-badge orange">For Sale</div>
+
+                  <div class="banner-actions">
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="location"></ion-icon>
+
+                      <address>Downtown, Seattle</address>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="camera"></ion-icon>
+
+                      <span>10</span>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="cube"></ion-icon>
+
+                      <span>3D</span>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-price">
+                    <strong>$1,250,000</strong>
+                  </div>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Modern Waterfront Condo</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Sleek contemporary condo with floor-to-ceiling windows, gourmet kitchen, and breathtaking water views
+                  </p>
+
+                  <ul class="card-list">
+
+                    <li class="card-item">
+                      <strong>2</strong>
+
+                      <ion-icon name="bed-outline"></ion-icon>
+
+                      <span>Bedrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>2</strong>
+
+                      <ion-icon name="man-outline"></ion-icon>
+
+                      <span>Bathrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>1850</strong>
+
+                      <ion-icon name="square-outline"></ion-icon>
+
+                      <span>Square Ft</span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="card-footer">
+
+                  <div class="card-author">
+
+                    <figure class="author-avatar">
+                      <img src="/assets/images/author.jpg" alt="William Seklo" class="w-100">
+                    </figure>
+
+                    <div>
+                      <p class="author-name">
+                        <a href="#">Jessica Martinez</a>
+                      </p>
+
+                      <p class="author-title">Waterfront Specialist</p>
+                    </div>
+
+                  </div>
+
+                  <div class="card-footer-actions">
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="resize-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="options-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="add-circle-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="property-card" data-id="property-8" data-lat="25.7617" data-lng="-80.1918">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="/assets/images/property-4.jpg" alt="Beachfront Villa in Miami" class="w-100">
+                  </a>
+
+                  <div class="card-badge orange">For Sale</div>
+
+                  <div class="banner-actions">
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="location"></ion-icon>
+
+                      <address>South Beach, Miami</address>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="camera"></ion-icon>
+
+                      <span>12</span>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="cube"></ion-icon>
+
+                      <span>3D</span>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-price">
+                    <strong>$4,750,000</strong>
+                  </div>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Beachfront Villa in Miami</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Luxurious beachfront property with infinity pool, outdoor kitchen, and direct beach access
+                  </p>
+
+                  <ul class="card-list">
+
+                    <li class="card-item">
+                      <strong>5</strong>
+
+                      <ion-icon name="bed-outline"></ion-icon>
+
+                      <span>Bedrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>5.5</strong>
+
+                      <ion-icon name="man-outline"></ion-icon>
+
+                      <span>Bathrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>6500</strong>
+
+                      <ion-icon name="square-outline"></ion-icon>
+
+                      <span>Square Ft</span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="card-footer">
+
+                  <div class="card-author">
+
+                    <figure class="author-avatar">
+                      <img src="/assets/images/author.jpg" alt="William Seklo" class="w-100">
+                    </figure>
+
+                    <div>
+                      <p class="author-name">
+                        <a href="#">Robert Patel</a>
+                      </p>
+
+                      <p class="author-title">Luxury Real Estate</p>
+                    </div>
+
+                  </div>
+
+                  <div class="card-footer-actions">
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="resize-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="options-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="add-circle-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="property-card" data-id="property-9" data-lat="32.7767" data-lng="-96.7970">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="/assets/images/property-1.jpg" alt="Urban Loft in Dallas" class="w-100">
+                  </a>
+
+                  <div class="card-badge green">For Rent</div>
+
+                  <div class="banner-actions">
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="location"></ion-icon>
+
+                      <address>Downtown, Dallas</address>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="camera"></ion-icon>
+
+                      <span>5</span>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="cube"></ion-icon>
+
+                      <span>3D</span>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-price">
+                    <strong>$3,800</strong>/Month
+                  </div>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Urban Loft in Dallas</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Industrial-style loft with exposed brick, high ceilings, and custom built-ins in the heart of the arts district
+                  </p>
+
+                  <ul class="card-list">
+
+                    <li class="card-item">
+                      <strong>1</strong>
+
+                      <ion-icon name="bed-outline"></ion-icon>
+
+                      <span>Bedrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>1.5</strong>
+
+                      <ion-icon name="man-outline"></ion-icon>
+
+                      <span>Bathrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>1650</strong>
+
+                      <ion-icon name="square-outline"></ion-icon>
+
+                      <span>Square Ft</span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="card-footer">
+
+                  <div class="card-author">
+
+                    <figure class="author-avatar">
+                      <img src="/assets/images/author.jpg" alt="William Seklo" class="w-100">
+                    </figure>
+
+                    <div>
+                      <p class="author-name">
+                        <a href="#">David Wilson</a>
+                      </p>
+
+                      <p class="author-title">Urban Properties</p>
+                    </div>
+
+                  </div>
+
+                  <div class="card-footer-actions">
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="resize-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="options-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="add-circle-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="property-card" data-id="property-10" data-lat="37.7749" data-lng="-122.4194">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="/assets/images/property-2.jpg" alt="Victorian Home in San Francisco" class="w-100">
+                  </a>
+
+                  <div class="card-badge orange">For Sale</div>
+
+                  <div class="banner-actions">
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="location"></ion-icon>
+
+                      <address>Nob Hill, San Francisco</address>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="camera"></ion-icon>
+
+                      <span>9</span>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="cube"></ion-icon>
+
+                      <span>3D</span>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-price">
+                    <strong>$3,250,000</strong>
+                  </div>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Victorian Home in San Francisco</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Meticulously restored Victorian with period details, modern updates, and stunning bay views
+                  </p>
+
+                  <ul class="card-list">
+
+                    <li class="card-item">
+                      <strong>4</strong>
+
+                      <ion-icon name="bed-outline"></ion-icon>
+
+                      <span>Bedrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>3</strong>
+
+                      <ion-icon name="man-outline"></ion-icon>
+
+                      <span>Bathrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>3200</strong>
+
+                      <ion-icon name="square-outline"></ion-icon>
+
+                      <span>Square Ft</span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="card-footer">
+
+                  <div class="card-author">
+
+                    <figure class="author-avatar">
+                      <img src="/assets/images/author.jpg" alt="William Seklo" class="w-100">
+                    </figure>
+
+                    <div>
+                      <p class="author-name">
+                        <a href="#">Emily Wong</a>
+                      </p>
+
+                      <p class="author-title">Historic Homes</p>
+                    </div>
+
+                  </div>
+
+                  <div class="card-footer-actions">
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="resize-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="options-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-footer-actions-btn">
+                      <ion-icon name="add-circle-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #FEATURES
+      -->
+
+      <section class="features">
+        <div class="container">
+
+          <p class="section-subtitle">Our Amenities</p>
+
+          <h2 class="h2 section-title">Building Amenities</h2>
+
+          <ul class="features-list">
+
+            <li>
+              <a href="#" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="car-sport-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Parking Space</h3>
+
+                <div class="card-btn">
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </div>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="water-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Swimming Pool</h3>
+
+                <div class="card-btn">
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </div>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="shield-checkmark-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Private Security</h3>
+
+                <div class="card-btn">
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </div>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="fitness-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Medical Center</h3>
+
+                <div class="card-btn">
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </div>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="library-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Library Area</h3>
+
+                <div class="card-btn">
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </div>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="bed-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">King Size Beds</h3>
+
+                <div class="card-btn">
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </div>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="home-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Smart Homes</h3>
+
+                <div class="card-btn">
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </div>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="football-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Kid's Playland</h3>
+
+                <div class="card-btn">
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="blog" id="blog">
+        <div class="container">
+
+          <p class="section-subtitle">News & Blogs</p>
+
+          <h2 class="h2 section-title">Leatest News Feeds</h2>
+
+          <ul class="blog-list has-scrollbar">
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+                  <a href="blog-details.html?id=1">
+                    <img src="/assets/images/blog-1.png" alt="The Most Inspiring Interior Design Of 2021" class="w-100">
+                  </a>
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-content-top">
+
+                    <ul class="card-meta-list">
+
+                      <li>
+                        <a href="#" class="card-meta-link">
+                          <ion-icon name="person"></ion-icon>
+
+                          <span>by: Admin</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#" class="card-meta-link">
+                          <ion-icon name="pricetags"></ion-icon>
+
+                          <span>Interior</span>
+                        </a>
+                      </li>
+
+                    </ul>
+
+                    <h3 class="h3 blog-title">
+                      <a href="blog-details.html?id=1">The Most Inspiring Interior Design Of 2021</a>
+                    </h3>
+
+                  </div>
+
+                  <div class="blog-content-bottom">
+                    <div class="publish-date">
+                      <ion-icon name="calendar"></ion-icon>
+
+                      <time datetime="2022-27-04">Apr 27, 2022</time>
+                    </div>
+
+                    <a href="blog-details.html?id=1" class="read-more-btn">Read More</a>
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+                  <a href="blog-details.html?id=2">
+                    <img src="/assets/images/blog-2.jpg" alt="Recent Commercial Real Estate Transactions" class="w-100">
+                  </a>
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-content-top">
+
+                    <ul class="card-meta-list">
+
+                      <li>
+                        <a href="#" class="card-meta-link">
+                          <ion-icon name="person"></ion-icon>
+
+                          <span>by: Admin</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#" class="card-meta-link">
+                          <ion-icon name="pricetags"></ion-icon>
+
+                          <span>Estate</span>
+                        </a>
+                      </li>
+
+                    </ul>
+
+                    <h3 class="h3 blog-title">
+                      <a href="blog-details.html?id=2">Recent Commercial Real Estate Transactions</a>
+                    </h3>
+
+                  </div>
+
+                  <div class="blog-content-bottom">
+                    <div class="publish-date">
+                      <ion-icon name="calendar"></ion-icon>
+
+                      <time datetime="2022-27-04">Apr 27, 2022</time>
+                    </div>
+
+                    <a href="blog-details.html?id=2" class="read-more-btn">Read More</a>
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+                  <a href="blog-details.html?id=3">
+                    <img src="/assets/images/blog-3.jpg" alt="Renovating a Living Room? Experts Share Their Secrets"
+                      class="w-100">
+                  </a>
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-content-top">
+
+                    <ul class="card-meta-list">
+
+                      <li>
+                        <a href="#" class="card-meta-link">
+                          <ion-icon name="person"></ion-icon>
+
+                          <span>by: Admin</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#" class="card-meta-link">
+                          <ion-icon name="pricetags"></ion-icon>
+
+                          <span>Room</span>
+                        </a>
+                      </li>
+
+                    </ul>
+
+                    <h3 class="h3 blog-title">
+                      <a href="blog-details.html?id=3">Renovating a Living Room? Experts Share Their Secrets</a>
+                    </h3>
+
+                  </div>
+
+                  <div class="blog-content-bottom">
+                    <div class="publish-date">
+                      <ion-icon name="calendar"></ion-icon>
+
+                      <time datetime="2022-27-04">Apr 27, 2022</time>
+                    </div>
+
+                    <a href="blog-details.html?id=3" class="read-more-btn">Read More</a>
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="cta">
+        <div class="container">
+
+          <div class="cta-card">
+            <div class="card-content">
+              <h2 class="h2 card-title">Looking for a dream home?</h2>
+
+              <p class="card-text">We can help you realize your dream of a new home</p>
+            </div>
+
+            <button class="btn cta-btn">
+              <span>Explore Properties</span>
+
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo-light.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Kharar, Punjab, India</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+919027161301" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+91 9027161301</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:deepusrivastav1212@gmail.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>deepusrivastav1212@gmail.com</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+
+            <li>
+              <a href="#about" class="footer-link">About</a>
+            </li>
+
+            <li>
+              <a href="blog.html" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="#property" class="footer-link">All Properties</a>
+            </li>
+
+            <li>
+              <a href="#property" class="footer-link">Locations Map</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="terms.html" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="#property" class="footer-link">Promotional Offers</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Customer Care</p>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Enquiry Modal -->
+  <div class="enquiry-modal" id="enquiryModal">
+    <div class="enquiry-modal-content">
+      <div class="enquiry-modal-header">
+        <h3 class="enquiry-modal-title">Make An Enquiry</h3>
+        <button class="close-enquiry-btn">&times;</button>
+      </div>
+      <div class="enquiry-modal-body">
+        <form class="enquiry-form" id="enquiryForm">
+          <div class="form-group">
+            <label for="name">Your Name*</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address*</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject*</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message*</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn">Submit Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="/assets/js/script.js" defer></script>
+  <script src="/assets/js/config.js" defer></script>
+  
+  <!-- Load essential scripts first -->
+  <script src="/assets/js/navigation.js" defer></script>
+  <script src="/assets/js/property-data.js" defer></script>
+  <script src="/assets/js/blog-data.js" defer></script>
+  
+  <!-- Load feature-specific scripts -->
+  <script src="/assets/js/wishlist.js" defer></script>
+  <script src="/assets/js/property-card.js" defer></script>
+  <script src="/assets/js/api-service.js" defer></script>
+  <script src="/assets/js/query-manager.js" defer></script>
+  <script src="/assets/js/enquiry.js" defer></script>
+  <script src="/assets/js/service-actions.js" defer></script>
+  <script src="/assets/js/amenities.js" defer></script>
+  <script src="/assets/js/location.js" defer></script>
+  <script src="/assets/js/property-view.js" defer></script>
+  <script src="/assets/js/buttons.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Google Maps API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places" async defer></script>
+
+  <script src="./assets/js/sarasvati.js"></script>
+
+</body>
+
+</html>

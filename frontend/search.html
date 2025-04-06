@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Properties - Homeverse</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    .search-section {
+      padding: 80px 0;
+      background-color: var(--cultured, #f5f5f5);
+    }
+    
+    .search-form {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: var(--shadow-2);
+      padding: 30px;
+      margin-bottom: 40px;
+    }
+    
+    .search-input-group {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    
+    .search-input {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px 0 0 4px;
+      font-size: 16px;
+    }
+    
+    .search-button {
+      background-color: var(--orange-soda, #f85a40);
+      color: white;
+      border: none;
+      padding: 0 20px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .filter-select {
+      flex: 1;
+      min-width: 150px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background-color: white;
+    }
+    
+    .property-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .property-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .property-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-2);
+    }
+    
+    .property-banner {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .property-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .property-content {
+      padding: 20px;
+    }
+    
+    .property-title {
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    .property-location {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 15px;
+      color: var(--cadet, #6f7b8c);
+      font-size: 14px;
+    }
+    
+    .property-features {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+    }
+    
+    .property-price {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--orange-soda, #f85a40);
+    }
+    
+    .property-status {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: var(--orange-soda, #f85a40);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .no-results {
+      text-align: center;
+      padding: 50px 0;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+
+          <li>
+            <a href="mailto:deepusrivastav1212@gmail.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <span>deepusrivastav1212@gmail.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="tel:+919027161301" class="header-top-link">
+              <ion-icon name="call-outline"></ion-icon>
+
+              <span>+91 9027161301</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-top-link">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>Kharar, Punjab, India</address>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <ul class="header-top-social-list">
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <button class="header-top-btn">Add Listing</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="index.html" class="logo">
+              <img src="./assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+
+              <li>
+                <a href="index.html" class="navbar-link">Home</a>
+              </li>
+
+              <li>
+                <a href="#about" class="navbar-link">About</a>
+              </li>
+
+              <li>
+                <a href="#service" class="navbar-link">Service</a>
+              </li>
+
+              <li>
+                <a href="#property" class="navbar-link">Property</a>
+              </li>
+
+              <li>
+                <a href="#blog" class="navbar-link">Blog</a>
+              </li>
+
+              <li>
+                <a href="#contact" class="navbar-link">Contact</a>
+              </li>
+
+              <li>
+                <a href="#" id="logout-link" class="navbar-link">Logout</a>
+              </li>
+
+            </ul>
+          </div>
+
+        </nav>
+
+        <div class="header-bottom-actions">
+
+          <button class="header-bottom-actions-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+
+            <span>Search</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+
+            <span>Profile</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Cart">
+            <ion-icon name="cart-outline"></ion-icon>
+
+            <span>Cart</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+
+            <span>Menu</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #SEARCH
+      -->
+
+      <section class="search-section">
+        <div class="container">
+          <p class="section-subtitle">Property Search</p>
+          <h2 class="h2 section-title">Find Your Dream Home</h2>
+          
+          <div class="search-form">
+            <form id="property-search-form">
+              <div class="search-input-group">
+                <input type="text" id="search-query" class="search-input" placeholder="Enter location, property type, or keyword">
+                <button type="submit" class="search-button">
+                  <ion-icon name="search-outline" style="font-size: 20px;"></ion-icon>
+                </button>
+              </div>
+              
+              <div class="filter-row">
+                <select id="property-type" class="filter-select">
+                  <option value="">Property Type</option>
+                  <option value="apartment">Apartment</option>
+                  <option value="house">House</option>
+                  <option value="villa">Villa</option>
+                  <option value="office">Office</option>
+                  <option value="commercial">Commercial</option>
+                </select>
+                
+                <select id="price-range" class="filter-select">
+                  <option value="">Price Range</option>
+                  <option value="0-100000">$0 - $100,000</option>
+                  <option value="100000-300000">$100,000 - $300,000</option>
+                  <option value="300000-500000">$300,000 - $500,000</option>
+                  <option value="500000+">$500,000+</option>
+                </select>
+                
+                <select id="bedrooms" class="filter-select">
+                  <option value="">Bedrooms</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4+">4+</option>
+                </select>
+                
+                <select id="bathrooms" class="filter-select">
+                  <option value="">Bathrooms</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4+">4+</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          
+          <div id="search-results">
+            <div class="property-grid">
+              <!-- Sample Property Cards - These would be dynamically generated in a real application -->
+              <div class="property-card">
+                <div class="property-banner">
+                  <img src="./assets/images/property-1.jpg" alt="Modern Apartment">
+                  <div class="property-status">For Sale</div>
+                </div>
+                
+                <div class="property-content">
+                  <h3 class="property-title">Modern Apartment with Amazing View</h3>
+                  
+                  <div class="property-location">
+                    <ion-icon name="location-outline"></ion-icon>
+                    <span>123 Main St, New York, NY 10001</span>
+                  </div>
+                  
+                  <div class="property-features">
+                    <div class="feature-item">
+                      <ion-icon name="bed-outline"></ion-icon>
+                      <span>3 Beds</span>
+                    </div>
+                    
+                    <div class="feature-item">
+                      <ion-icon name="water-outline"></ion-icon>
+                      <span>2 Baths</span>
+                    </div>
+                    
+                    <div class="feature-item">
+                      <ion-icon name="square-outline"></ion-icon>
+                      <span>1,200 sqft</span>
+                    </div>
+                  </div>
+                  
+                  <div class="property-price">$350,000</div>
+                </div>
+              </div>
+              
+              <div class="property-card">
+                <div class="property-banner">
+                  <img src="./assets/images/property-2.jpg" alt="Luxury Villa">
+                  <div class="property-status">For Rent</div>
+                </div>
+                
+                <div class="property-content">
+                  <h3 class="property-title">Luxury Villa with Pool</h3>
+                  
+                  <div class="property-location">
+                    <ion-icon name="location-outline"></ion-icon>
+                    <span>456 Park Ave, Miami, FL 33101</span>
+                  </div>
+                  
+                  <div class="property-features">
+                    <div class="feature-item">
+                      <ion-icon name="bed-outline"></ion-icon>
+                      <span>5 Beds</span>
+                    </div>
+                    
+                    <div class="feature-item">
+                      <ion-icon name="water-outline"></ion-icon>
+                      <span>4 Baths</span>
+                    </div>
+                    
+                    <div class="feature-item">
+                      <ion-icon name="square-outline"></ion-icon>
+                      <span>3,500 sqft</span>
+                    </div>
+                  </div>
+                  
+                  <div class="property-price">$5,000/mo</div>
+                </div>
+              </div>
+              
+              <div class="property-card">
+                <div class="property-banner">
+                  <img src="./assets/images/property-3.jpg" alt="Modern Office Space">
+                  <div class="property-status">For Sale</div>
+                </div>
+                
+                <div class="property-content">
+                  <h3 class="property-title">Modern Office Space</h3>
+                  
+                  <div class="property-location">
+                    <ion-icon name="location-outline"></ion-icon>
+                    <span>789 Business Blvd, Chicago, IL 60601</span>
+                  </div>
+                  
+                  <div class="property-features">
+                    <div class="feature-item">
+                      <ion-icon name="business-outline"></ion-icon>
+                      <span>Open Space</span>
+                    </div>
+                    
+                    <div class="feature-item">
+                      <ion-icon name="water-outline"></ion-icon>
+                      <span>2 Baths</span>
+                    </div>
+                    
+                    <div class="feature-item">
+                      <ion-icon name="square-outline"></ion-icon>
+                      <span>2,000 sqft</span>
+                    </div>
+                  </div>
+                  
+                  <div class="property-price">$750,000</div>
+                </div>
+              </div>
+              
+              <div class="property-card">
+                <div class="property-banner">
+                  <img src="./assets/images/property-4.jpg" alt="Cozy Family Home">
+                  <div class="property-status">For Sale</div>
+                </div>
+                
+                <div class="property-content">
+                  <h3 class="property-title">Cozy Family Home</h3>
+                  
+                  <div class="property-location">
+                    <ion-icon name="location-outline"></ion-icon>
+                    <span>321 Suburban St, Los Angeles, CA 90001</span>
+                  </div>
+                  
+                  <div class="property-features">
+                    <div class="feature-item">
+                      <ion-icon name="bed-outline"></ion-icon>
+                      <span>4 Beds</span>
+                    </div>
+                    
+                    <div class="feature-item">
+                      <ion-icon name="water-outline"></ion-icon>
+                      <span>3 Baths</span>
+                    </div>
+                    
+                    <div class="feature-item">
+                      <ion-icon name="square-outline"></ion-icon>
+                      <span>2,200 sqft</span>
+                    </div>
+                  </div>
+                  
+                  <div class="property-price">$480,000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Kharar, Punjab, India</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+919027161301" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+91 9027161301</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:deepusrivastav1212@gmail.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>deepusrivastav1212@gmail.com</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">About</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">All Products</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Locations Map</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Promotional Offers</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Customer Care</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  
+  <!-- 
+    - config js link
+  -->
+  <script src="./assets/js/config.js"></script>
+  
+  <!-- 
+    - buttons js link
+  -->
+  <script src="./assets/js/buttons.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- 
+    - search js
+  -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchForm = document.getElementById('property-search-form');
+      
+      searchForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const searchQuery = document.getElementById('search-query').value;
+        const propertyType = document.getElementById('property-type').value;
+        const priceRange = document.getElementById('price-range').value;
+        const bedrooms = document.getElementById('bedrooms').value;
+        const bathrooms = document.getElementById('bathrooms').value;
+        
+        // In a real application, you would send these parameters to the server
+        // and display the results
+        console.log('Search parameters:', {
+          searchQuery,
+          propertyType,
+          priceRange,
+          bedrooms,
+          bathrooms
+        });
+        
+        // For now, just show a message
+        alert(`Searching for properties with query: ${searchQuery || 'All properties'}`);
+      });
+    });
+  </script>
+
+</body>
+
+</html> 

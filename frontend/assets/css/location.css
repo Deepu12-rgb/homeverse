@@ -1,0 +1,449 @@
+/**
+ * Location Styles for Homeverse
+ */
+
+/* Location Modal */
+.location-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.location-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.location-modal.closing {
+  opacity: 0;
+}
+
+.location-modal-content {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.location-modal.active .location-modal-content {
+  transform: scale(1);
+}
+
+/* Modal Header */
+.location-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--alice-blue);
+  background-color: var(--cultured);
+}
+
+.location-modal-header h3 {
+  margin: 0;
+  color: var(--raisin-black);
+  font-size: 1.5rem;
+}
+
+.location-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--raisin-black);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.location-modal-close:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Body */
+.location-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+/* Location Address */
+.location-address {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: var(--cultured);
+  border-radius: 8px;
+}
+
+.location-address ion-icon {
+  font-size: 24px;
+  color: var(--orange-soda);
+  flex-shrink: 0;
+}
+
+.location-address p {
+  margin: 0;
+  color: var(--raisin-black);
+  font-weight: 500;
+}
+
+/* Location Map */
+.location-map {
+  width: 100%;
+  height: 300px;
+  background-color: var(--cultured);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sonic-silver);
+  font-style: italic;
+}
+
+.map-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  color: var(--sonic-silver);
+}
+
+.map-error a {
+  color: var(--orange-soda);
+  text-decoration: none;
+}
+
+.map-error a:hover {
+  text-decoration: underline;
+}
+
+.map-info-window {
+  padding: 5px;
+  max-width: 200px;
+}
+
+.map-info-window p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Location Actions */
+.location-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.location-actions .btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--orange-soda);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.location-actions .btn:hover {
+  background-color: #e04b32;
+}
+
+.location-actions .btn ion-icon {
+  font-size: 18px;
+}
+
+/* Location Search */
+.location-search-container {
+  margin-bottom: 20px;
+}
+
+.location-search-input-container {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.location-search-input-container ion-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--sonic-silver);
+  font-size: 20px;
+}
+
+#location-search-input {
+  width: 100%;
+  padding: 12px 40px;
+  border: 1px solid var(--alice-blue);
+  border-radius: 8px;
+  font-size: 16px;
+  color: var(--raisin-black);
+}
+
+#location-search-input:focus {
+  outline: none;
+  border-color: var(--orange-soda);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--sonic-silver);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.clear-search-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.use-current-location-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--cultured);
+  color: var(--raisin-black);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.use-current-location-btn:hover {
+  background-color: var(--alice-blue);
+}
+
+.use-current-location-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.use-current-location-btn ion-icon {
+  font-size: 18px;
+  color: var(--orange-soda);
+}
+
+/* Recent Locations */
+.recent-locations {
+  margin-bottom: 20px;
+}
+
+.recent-locations h4,
+.popular-locations h4 {
+  margin: 0 0 10px;
+  color: var(--raisin-black);
+  font-size: 1.1rem;
+}
+
+.recent-locations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recent-location-item {
+  margin-bottom: 5px;
+}
+
+.recent-location-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--cultured);
+  color: var(--raisin-black);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.recent-location-btn:hover {
+  background-color: var(--alice-blue);
+}
+
+.recent-location-btn ion-icon {
+  font-size: 18px;
+  color: var(--sonic-silver);
+}
+
+/* Popular Locations */
+.popular-locations {
+  margin-bottom: 20px;
+}
+
+.popular-locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.popular-location-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--cultured);
+  color: var(--raisin-black);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.popular-location-btn:hover {
+  background-color: var(--orange-soda);
+  color: white;
+}
+
+/* Modal Footer */
+.location-modal-footer {
+  padding: 20px;
+  border-top: 1px solid var(--alice-blue);
+  text-align: center;
+}
+
+.search-location-btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  background-color: var(--orange-soda);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-location-btn:hover {
+  background-color: #e04b32;
+}
+
+.search-location-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Location-specific No Properties Message */
+.location-no-properties {
+  text-align: center;
+  padding: 30px;
+  background-color: var(--cultured);
+  border-radius: 8px;
+  margin: 20px 0;
+  color: var(--sonic-silver);
+  font-style: italic;
+  display: none;
+}
+
+/* Location-specific Show All Button */
+.location-show-all {
+  display: none;
+  margin: 20px auto;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  background-color: var(--orange-soda);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.location-show-all:hover {
+  background-color: #e04b32;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .location-modal-content {
+    width: 95%;
+    max-height: 95vh;
+  }
+  
+  .location-modal-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .location-map {
+    height: 250px;
+  }
+  
+  .location-actions {
+    flex-direction: column;
+  }
+  
+  .popular-locations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .location-modal-body {
+    padding: 15px;
+  }
+  
+  .location-map {
+    height: 200px;
+  }
+} 

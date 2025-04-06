@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add 3D Model - Homeverse</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/property-3d.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - model-viewer component
+  -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+
+          <li>
+            <a href="mailto:deepusrivastav1212@gmail.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <span>deepusrivastav1212@gmail.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="tel:+919027161301" class="header-top-link">
+              <ion-icon name="call-outline"></ion-icon>
+
+              <span>+91 9027161301</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-top-link">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>Kharar, Punjab, India</address>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <ul class="header-top-social-list">
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <button class="header-top-btn">Add Listing</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="index.html" class="logo">
+              <img src="./assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+
+              <li>
+                <a href="index.html" class="navbar-link">Home</a>
+              </li>
+
+              <li>
+                <a href="index.html#about" class="navbar-link">About</a>
+              </li>
+
+              <li>
+                <a href="index.html#service" class="navbar-link">Service</a>
+              </li>
+
+              <li>
+                <a href="index.html#property" class="navbar-link">Property</a>
+              </li>
+
+              <li>
+                <a href="blog.html" class="navbar-link">Blog</a>
+              </li>
+
+              <li>
+                <a href="contact.html" class="navbar-link">Contact</a>
+              </li>
+
+              <li>
+                <a href="#" id="logout-link" class="navbar-link">Logout</a>
+              </li>
+
+            </ul>
+          </div>
+
+        </nav>
+
+        <div class="header-bottom-actions">
+
+          <button class="header-bottom-actions-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+
+            <span>Search</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+
+            <span>Profile</span>
+            
+            <div class="profile-dropdown">
+              <a href="profile.html" class="dropdown-link">My Profile</a>
+              <a href="messages.html" class="dropdown-link">Messages</a>
+              <a href="#" id="logout-link" class="dropdown-link">Logout</a>
+            </div>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Cart">
+            <ion-icon name="cart-outline"></ion-icon>
+
+            <span>Cart</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+
+            <span>Menu</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #PROPERTY 3D MODEL
+      -->
+
+      <section class="property-3d-section">
+        <div class="container">
+          <p class="section-subtitle">3D Model Generator</p>
+          <h2 class="h2 section-title">Create 3D Models From Videos</h2>
+          
+          <div class="video-upload-container">
+            <h3 class="video-upload-title">Upload Property Video</h3>
+            <p class="video-upload-description">
+              Transform your property listings with professional 3D models! Upload a video walkthrough of your property and our AI-powered system will automatically generate an immersive 3D model that potential buyers can explore virtually.
+            </p>
+            
+            <div class="video-tips">
+              <h4>Tips for best results:</h4>
+              <ul>
+                <li>Use landscape orientation and keep the camera steady</li>
+                <li>Walk slowly through each room and capture all angles</li>
+                <li>Ensure good lighting throughout the property</li>
+                <li>Include all key spaces (rooms, hallways, outdoor areas)</li>
+                <li>Avoid fast movements or abrupt transitions</li>
+              </ul>
+            </div>
+            
+            <form id="video-upload-form" class="video-upload-form">
+              <input type="hidden" id="property-id" value="123">
+              
+              <div class="form-group">
+                <label for="property-video" class="form-label">Property Video</label>
+                <div class="file-input-container">
+                  <ion-icon name="videocam" class="file-input-icon"></ion-icon>
+                  <p class="file-input-text">Drag and drop your video here or click to browse</p>
+                  <p class="file-input-subtext">Supported formats: MP4, MOV, AVI (Max size: 500MB)</p>
+                  <input type="file" id="property-video" accept="video/*">
+                </div>
+              </div>
+              
+              <div id="video-preview" class="video-preview"></div>
+              
+              <div class="upload-progress-container">
+                <progress id="upload-progress" class="upload-progress" value="0" max="100"></progress>
+                <p id="upload-status" class="upload-status"></p>
+              </div>
+              
+              <button type="submit" id="upload-button" class="upload-button">Generate 3D Model</button>
+            </form>
+          </div>
+          
+          <div id="model-container" class="model-container">
+            <h3 class="model-title">3D Model Preview</h3>
+            
+            <model-viewer src="./assets/models/sample-house.glb" 
+                          alt="A 3D model of the property" 
+                          camera-controls 
+                          auto-rotate 
+                          ar
+                          poster="./assets/images/model-loading.png">
+            </model-viewer>
+            
+            <div class="model-controls">
+              <button class="model-button">
+                <ion-icon name="save-outline"></ion-icon>
+                Save Model
+              </button>
+              <button class="model-button">
+                <ion-icon name="share-social-outline"></ion-icon>
+                Share
+              </button>
+              <button class="model-button">
+                <ion-icon name="download-outline"></ion-icon>
+                Download
+              </button>
+            </div>
+          </div>
+          
+          <div class="property-list">
+            <h3 class="h3 section-title">Your Properties with 3D Models</h3>
+            
+            <div class="property-grid">
+              <div class="property-card">
+                <figure class="card-banner">
+                  <img src="./assets/images/property-1.jpg" alt="Modern Apartment" class="w-100">
+                  <div class="card-badge">For Sale</div>
+                  <div class="banner-actions">
+                    <button class="banner-actions-btn">
+                      <ion-icon name="location"></ion-icon>
+                      <address>Belmont Gardens, Chicago</address>
+                    </button>
+                    <button class="banner-actions-btn">
+                      <ion-icon name="camera"></ion-icon>
+                      <span>4</span>
+                    </button>
+                    <button class="banner-actions-btn">
+                      <ion-icon name="film"></ion-icon>
+                      <span>2</span>
+                    </button>
+                    <button class="banner-actions-btn">
+                      <ion-icon name="cube"></ion-icon>
+                      <span>3D</span>
+                    </button>
+                  </div>
+                </figure>
+                <div class="card-content">
+                  <div class="card-price">
+                    <strong>$34,900</strong>/Month
+                  </div>
+                  <h3 class="h3 card-title">
+                    <a href="property-details.html">Modern Apartment in City Center</a>
+                  </h3>
+                  <p class="card-text">
+                    Beautiful modern apartment in city center with 3D virtual tour available.
+                  </p>
+                  <ul class="card-list">
+                    <li class="card-item">
+                      <strong>3</strong>
+                      <ion-icon name="bed-outline"></ion-icon>
+                      <span>Bedrooms</span>
+                    </li>
+                    <li class="card-item">
+                      <strong>2</strong>
+                      <ion-icon name="man-outline"></ion-icon>
+                      <span>Bathrooms</span>
+                    </li>
+                    <li class="card-item">
+                      <strong>3450</strong>
+                      <ion-icon name="square-outline"></ion-icon>
+                      <span>Square Ft</span>
+                    </li>
+                  </ul>
+                  <div class="card-footer">
+                    <a href="property-3d-view.html?id=1" class="view-3d-btn">View 3D Model</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="property-card">
+                <figure class="card-banner">
+                  <img src="./assets/images/property-2.jpg" alt="Luxury Villa" class="w-100">
+                  <div class="card-badge">For Rent</div>
+                  <div class="banner-actions">
+                    <button class="banner-actions-btn">
+                      <ion-icon name="location"></ion-icon>
+                      <address>Belmont Gardens, Chicago</address>
+                    </button>
+                    <button class="banner-actions-btn">
+                      <ion-icon name="camera"></ion-icon>
+                      <span>6</span>
+                    </button>
+                    <button class="banner-actions-btn">
+                      <ion-icon name="film"></ion-icon>
+                      <span>3</span>
+                    </button>
+                    <button class="banner-actions-btn">
+                      <ion-icon name="cube"></ion-icon>
+                      <span>3D</span>
+                    </button>
+                  </div>
+                </figure>
+                <div class="card-content">
+                  <div class="card-price">
+                    <strong>$56,000</strong>/Month
+                  </div>
+                  <h3 class="h3 card-title">
+                    <a href="property-details.html">Luxury Villa in Suburban Area</a>
+                  </h3>
+                  <p class="card-text">
+                    Spacious luxury villa with garden and pool, complete with 3D virtual tour.
+                  </p>
+                  <ul class="card-list">
+                    <li class="card-item">
+                      <strong>5</strong>
+                      <ion-icon name="bed-outline"></ion-icon>
+                      <span>Bedrooms</span>
+                    </li>
+                    <li class="card-item">
+                      <strong>3</strong>
+                      <ion-icon name="man-outline"></ion-icon>
+                      <span>Bathrooms</span>
+                    </li>
+                    <li class="card-item">
+                      <strong>5280</strong>
+                      <ion-icon name="square-outline"></ion-icon>
+                      <span>Square Ft</span>
+                    </li>
+                  </ul>
+                  <div class="card-footer">
+                    <a href="property-3d-view.html?id=2" class="view-3d-btn">View 3D Model</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Kharar, Punjab, India</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+919027161301" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+91 9027161301</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:deepusrivastav1212@gmail.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>deepusrivastav1212@gmail.com</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+
+            <li>
+              <a href="index.html#about" class="footer-link">About</a>
+            </li>
+
+            <li>
+              <a href="blog.html" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">All Properties</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">Locations Map</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="terms.html" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">Promotional Offers</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Customer Care</p>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  
+  <!-- 
+    - config js link
+  -->
+  <script src="./assets/js/config.js"></script>
+  
+  <!-- 
+    - buttons js link
+  -->
+  <script src="./assets/js/buttons.js"></script>
+
+  <!-- 
+    - navigation js link
+  -->
+  <script src="./assets/js/navigation.js"></script>
+
+  <!-- 
+    - property 3D js link
+  -->
+  <script src="./assets/js/property-3d.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html> 

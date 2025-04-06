@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart - Homeverse</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    .cart-section {
+      padding: 80px 0;
+      background-color: var(--cultured, #f5f5f5);
+    }
+    
+    .cart-container {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: var(--shadow-2);
+      padding: 30px;
+      margin-top: 30px;
+    }
+    
+    .cart-header {
+      display: grid;
+      grid-template-columns: 3fr 1fr 1fr 1fr auto;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      font-weight: 600;
+    }
+    
+    .cart-item {
+      display: grid;
+      grid-template-columns: 3fr 1fr 1fr 1fr auto;
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+      align-items: center;
+    }
+    
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+    
+    .item-details {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .item-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+    
+    .item-name {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .item-type {
+      color: var(--cadet, #6f7b8c);
+      font-size: 14px;
+    }
+    
+    .item-price {
+      font-weight: 600;
+      color: var(--orange-soda, #f85a40);
+    }
+    
+    .item-quantity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .quantity-btn {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #ddd;
+      background-color: white;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    
+    .quantity-input {
+      width: 40px;
+      height: 30px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      text-align: center;
+    }
+    
+    .remove-btn {
+      background: none;
+      border: none;
+      color: #888;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    
+    .remove-btn:hover {
+      color: var(--orange-soda, #f85a40);
+    }
+    
+    .cart-summary {
+      margin-top: 30px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: var(--shadow-2);
+      padding: 30px;
+    }
+    
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .summary-row.total {
+      font-weight: 700;
+      font-size: 18px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+      margin-top: 15px;
+    }
+    
+    .checkout-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: var(--orange-soda, #f85a40);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .checkout-btn:hover {
+      background-color: #e04b32;
+    }
+    
+    .empty-cart {
+      text-align: center;
+      padding: 50px 0;
+    }
+    
+    .empty-cart-icon {
+      font-size: 60px;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+    
+    .continue-shopping-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: var(--orange-soda, #f85a40);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 20px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    
+    .continue-shopping-btn:hover {
+      background-color: #e04b32;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+
+          <li>
+            <a href="mailto:deepusrivastav1212@gmail.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <span>deepusrivastav1212@gmail.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="tel:+919027161301" class="header-top-link">
+              <ion-icon name="call-outline"></ion-icon>
+
+              <span>+91 9027161301</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-top-link">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>Kharar, Punjab, India</address>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <ul class="header-top-social-list">
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <button class="header-top-btn">Add Listing</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="index.html" class="logo">
+              <img src="./assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+
+              <li>
+                <a href="index.html" class="navbar-link">Home</a>
+              </li>
+
+              <li>
+                <a href="#about" class="navbar-link">About</a>
+              </li>
+
+              <li>
+                <a href="#service" class="navbar-link">Service</a>
+              </li>
+
+              <li>
+                <a href="#property" class="navbar-link">Property</a>
+              </li>
+
+              <li>
+                <a href="#blog" class="navbar-link">Blog</a>
+              </li>
+
+              <li>
+                <a href="#contact" class="navbar-link">Contact</a>
+              </li>
+
+              <li>
+                <a href="#" id="logout-link" class="navbar-link">Logout</a>
+              </li>
+
+            </ul>
+          </div>
+
+        </nav>
+
+        <div class="header-bottom-actions">
+
+          <button class="header-bottom-actions-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+
+            <span>Search</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+
+            <span>Profile</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Cart">
+            <ion-icon name="cart-outline"></ion-icon>
+
+            <span>Cart</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+
+            <span>Menu</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #CART
+      -->
+
+      <section class="cart-section">
+        <div class="container">
+          <p class="section-subtitle">Your Cart</p>
+          <h2 class="h2 section-title">Saved Properties</h2>
+          
+          <div id="cart-content">
+            <!-- This will be populated by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Kharar, Punjab, India</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+919027161301" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+91 9027161301</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:deepusrivastav1212@gmail.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>deepusrivastav1212@gmail.com</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">About</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">All Products</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Locations Map</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Promotional Offers</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Customer Care</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  
+  <!-- 
+    - config js link
+  -->
+  <script src="./assets/js/config.js"></script>
+  
+  <!-- 
+    - buttons js link
+  -->
+  <script src="./assets/js/buttons.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- 
+    - cart js
+  -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cartContent = document.getElementById('cart-content');
+      
+      // Check if there are items in the cart
+      const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+      
+      if (cartItems.length === 0) {
+        // Show empty cart message
+        cartContent.innerHTML = `
+          <div class="empty-cart">
+            <div class="empty-cart-icon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </div>
+            <h3>Your cart is empty</h3>
+            <p>You haven't added any properties to your cart yet.</p>
+            <a href="index.html" class="continue-shopping-btn">Continue Shopping</a>
+          </div>
+        `;
+      } else {
+        // Show cart items
+        let cartHTML = `
+          <div class="cart-container">
+            <div class="cart-header">
+              <div>Property</div>
+              <div>Price</div>
+              <div>Status</div>
+              <div>Action</div>
+              <div></div>
+            </div>
+        `;
+        
+        // Sample cart items (in a real application, these would come from localStorage or a database)
+        const sampleItems = [
+          {
+            id: 1,
+            name: 'Modern Apartment with Amazing View',
+            type: 'Apartment',
+            price: 350000,
+            status: 'For Sale',
+            image: './assets/images/property-1.jpg'
+          },
+          {
+            id: 2,
+            name: 'Luxury Villa with Pool',
+            type: 'Villa',
+            price: 5000,
+            status: 'For Rent',
+            image: './assets/images/property-2.jpg'
+          }
+        ];
+        
+        let subtotal = 0;
+        
+        sampleItems.forEach(item => {
+          const itemPrice = item.status === 'For Rent' ? `$${item.price}/mo` : `$${item.price.toLocaleString()}`;
+          subtotal += item.status === 'For Rent' ? item.price : item.price;
+          
+          cartHTML += `
+            <div class="cart-item" data-id="${item.id}">
+              <div class="item-details">
+                <img src="${item.image}" alt="${item.name}" class="item-image">
+                <div>
+                  <div class="item-name">${item.name}</div>
+                  <div class="item-type">${item.type}</div>
+                </div>
+              </div>
+              <div class="item-price">${itemPrice}</div>
+              <div>${item.status}</div>
+              <div>
+                <button class="btn view-details-btn" style="background-color: var(--orange-soda, #f85a40); color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">View Details</button>
+              </div>
+              <div>
+                <button class="remove-btn" onclick="removeFromCart(${item.id})">×</button>
+              </div>
+            </div>
+          `;
+        });
+        
+        cartHTML += `
+          </div>
+          
+          <div class="cart-summary">
+            <h3 class="h3" style="margin-bottom: 20px;">Cart Summary</h3>
+            
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span>$${subtotal.toLocaleString()}</span>
+            </div>
+            
+            <div class="summary-row">
+              <span>Service Fee</span>
+              <span>$${(subtotal * 0.05).toLocaleString()}</span>
+            </div>
+            
+            <div class="summary-row total">
+              <span>Total</span>
+              <span>$${(subtotal * 1.05).toLocaleString()}</span>
+            </div>
+            
+            <button class="checkout-btn">Proceed to Checkout</button>
+          </div>
+        `;
+        
+        cartContent.innerHTML = cartHTML;
+        
+        // Add event listeners
+        document.querySelectorAll('.view-details-btn').forEach(button => {
+          button.addEventListener('click', function() {
+            const itemId = this.closest('.cart-item').dataset.id;
+            alert(`Viewing details for property ID: ${itemId}`);
+            // In a real application, you would redirect to the property details page
+          });
+        });
+        
+        document.querySelector('.checkout-btn').addEventListener('click', function() {
+          alert('Proceeding to checkout...');
+          // In a real application, you would redirect to the checkout page
+        });
+      }
+    });
+    
+    // Function to remove item from cart
+    function removeFromCart(itemId) {
+      // In a real application, you would remove the item from localStorage or database
+      alert(`Removing item with ID: ${itemId} from cart`);
+      
+      // Remove the item from the DOM
+      const itemElement = document.querySelector(`.cart-item[data-id="${itemId}"]`);
+      if (itemElement) {
+        itemElement.remove();
+      }
+      
+      // Check if cart is empty after removal
+      const cartItems = document.querySelectorAll('.cart-item');
+      if (cartItems.length === 0) {
+        document.getElementById('cart-content').innerHTML = `
+          <div class="empty-cart">
+            <div class="empty-cart-icon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </div>
+            <h3>Your cart is empty</h3>
+            <p>You haven't added any properties to your cart yet.</p>
+            <a href="index.html" class="continue-shopping-btn">Continue Shopping</a>
+          </div>
+        `;
+      }
+    }
+  </script>
+
+</body>
+
+</html> 

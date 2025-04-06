@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Listing - Homeverse</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/wishlist.css">
+  <link rel="stylesheet" href="./assets/css/enquiry.css">
+  <link rel="stylesheet" href="./assets/css/service-actions.css">
+  <link rel="stylesheet" href="./assets/css/add-listing.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  
+  <style>
+    .add-listing-section {
+      padding: 80px 0;
+      background-color: var(--cultured, #f5f5f5);
+    }
+    
+    .add-listing-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: var(--shadow-2);
+      padding: 30px;
+      margin-top: 30px;
+    }
+    
+    .form-section {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .form-section:last-child {
+      border-bottom: none;
+    }
+    
+    .form-section-title {
+      margin-bottom: 20px;
+      color: var(--orange-soda, #f85a40);
+    }
+    
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .form-group {
+      flex: 1;
+      min-width: 250px;
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    
+    .form-control:focus {
+      border-color: var(--orange-soda, #f85a40);
+      outline: none;
+    }
+    
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .image-upload-container {
+      border: 2px dashed #ddd;
+      padding: 30px;
+      text-align: center;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .image-upload-container:hover {
+      border-color: var(--orange-soda, #f85a40);
+    }
+    
+    .image-upload-icon {
+      font-size: 40px;
+      color: #aaa;
+      margin-bottom: 10px;
+    }
+    
+    .btn-submit {
+      background-color: var(--orange-soda, #f85a40);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-submit:hover {
+      background-color: #e04b32;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+
+          <li>
+            <a href="mailto:info@homeverse.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <span>info@homeverse.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-top-link">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>15/A, Nest Tower, NYC</address>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <ul class="header-top-social-list">
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <button class="header-top-btn">Add Listing</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="#" class="logo">
+              <img src="./assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+
+              <li>
+                <a href="index.html#home" class="navbar-link">Home</a>
+              </li>
+
+              <li>
+                <a href="index.html#about" class="navbar-link">About</a>
+              </li>
+
+              <li>
+                <a href="index.html#service" class="navbar-link">Service</a>
+              </li>
+
+              <li>
+                <a href="index.html#property" class="navbar-link">Property</a>
+              </li>
+
+              <li>
+                <a href="property-3d.html" class="navbar-link">3D Models</a>
+              </li>
+
+              <li>
+                <a href="blog.html" class="navbar-link">Blog</a>
+              </li>
+
+              <li>
+                <a href="index.html#contact" class="navbar-link">Contact</a>
+              </li>
+
+              <li>
+                <a href="login.html" class="navbar-link">Login</a>
+              </li>
+
+              <li>
+                <a href="signup.html" class="navbar-link">Sign Up</a>
+              </li>
+
+            </ul>
+          </div>
+
+        </nav>
+
+        <div class="header-bottom-actions">
+
+          <button class="header-bottom-actions-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+
+            <span>Search</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+
+            <span>Profile</span>
+            
+            <div class="profile-dropdown">
+              <a href="profile.html" class="dropdown-link">My Profile</a>
+              <a href="my-queries.html" class="dropdown-link">My Queries</a>
+              <a href="#" id="logout-link" class="dropdown-link">Logout</a>
+            </div>
+          </button>
+
+          <button class="header-bottom-actions-btn wishlist-toggle-btn" aria-label="Wishlist">
+            <div class="wishlist-icon-wrapper">
+              <ion-icon name="heart-outline"></ion-icon>
+              <span class="wishlist-count hidden">0</span>
+            </div>
+          </button>
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+
+            <span>Menu</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Wishlist Sidebar -->
+  <div class="wishlist-sidebar">
+    <div class="wishlist-header">
+      <h3 class="wishlist-title">Your Wishlist</h3>
+      <button class="wishlist-close-btn">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+    </div>
+    <div class="wishlist-content">
+      <div class="wishlist-empty">Your wishlist is empty</div>
+      <div class="wishlist-items"></div>
+    </div>
+    <div class="wishlist-footer">
+      <div class="wishlist-total">
+        <div class="wishlist-total-label">Total Value:</div>
+        <div class="wishlist-total-value">$0</div>
+      </div>
+      <div class="wishlist-actions">
+        <button class="wishlist-button contact-agents-btn">Contact Agents</button>
+        <button class="wishlist-button clear-wishlist-btn">Clear Wishlist</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #ADD LISTING SECTION
+      -->
+
+      <section class="add-listing-section">
+        <div class="container">
+          <div class="add-listing-header">
+            <h2 class="h2 section-title">List Your Property</h2>
+            <p class="section-text">Complete the form below to list your property on Homeverse. Our team will review your submission and get back to you within 24 hours.</p>
+          </div>
+
+          <div class="add-listing-content">
+            <form class="add-listing-form" id="addListingForm">
+              <div class="form-section">
+                <h3 class="form-section-title">Property Information</h3>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="propertyTitle">Property Title*</label>
+                    <input type="text" id="propertyTitle" name="propertyTitle" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="propertyType">Property Type*</label>
+                    <select id="propertyType" name="propertyType" required>
+                      <option value="">Select Type</option>
+                      <option value="apartment">Apartment</option>
+                      <option value="house">House</option>
+                      <option value="villa">Villa</option>
+                      <option value="condo">Condo</option>
+                      <option value="townhouse">Townhouse</option>
+                      <option value="commercial">Commercial</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="listingType">Listing Type*</label>
+                    <select id="listingType" name="listingType" required>
+                      <option value="">Select Type</option>
+                      <option value="sale">For Sale</option>
+                      <option value="rent">For Rent</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="price">Price*</label>
+                    <input type="number" id="price" name="price" min="0" required>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="description">Property Description*</label>
+                  <textarea id="description" name="description" rows="5" required></textarea>
+                </div>
+              </div>
+              
+              <div class="form-section">
+                <h3 class="form-section-title">Property Details</h3>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="bedrooms">Bedrooms*</label>
+                    <input type="number" id="bedrooms" name="bedrooms" min="0" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="bathrooms">Bathrooms*</label>
+                    <input type="number" id="bathrooms" name="bathrooms" min="0" step="0.5" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="area">Area (sq ft)*</label>
+                    <input type="number" id="area" name="area" min="0" required>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="yearBuilt">Year Built</label>
+                    <input type="number" id="yearBuilt" name="yearBuilt" min="1800" max="2099">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="garage">Garage Spaces</label>
+                    <input type="number" id="garage" name="garage" min="0">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label>Features</label>
+                  <div class="features-checkboxes">
+                    <div class="feature-checkbox">
+                      <input type="checkbox" id="feature1" name="features" value="airConditioning">
+                      <label for="feature1">Air Conditioning</label>
+                    </div>
+                    <div class="feature-checkbox">
+                      <input type="checkbox" id="feature2" name="features" value="heating">
+                      <label for="feature2">Heating</label>
+                    </div>
+                    <div class="feature-checkbox">
+                      <input type="checkbox" id="feature3" name="features" value="internet">
+                      <label for="feature3">Internet</label>
+                    </div>
+                    <div class="feature-checkbox">
+                      <input type="checkbox" id="feature4" name="features" value="parking">
+                      <label for="feature4">Parking</label>
+                    </div>
+                    <div class="feature-checkbox">
+                      <input type="checkbox" id="feature5" name="features" value="pool">
+                      <label for="feature5">Swimming Pool</label>
+                    </div>
+                    <div class="feature-checkbox">
+                      <input type="checkbox" id="feature6" name="features" value="gym">
+                      <label for="feature6">Gym</label>
+                    </div>
+                    <div class="feature-checkbox">
+                      <input type="checkbox" id="feature7" name="features" value="security">
+                      <label for="feature7">Security System</label>
+                    </div>
+                    <div class="feature-checkbox">
+                      <input type="checkbox" id="feature8" name="features" value="balcony">
+                      <label for="feature8">Balcony</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-section">
+                <h3 class="form-section-title">Location</h3>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="address">Address*</label>
+                    <input type="text" id="address" name="address" required>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="city">City*</label>
+                    <input type="text" id="city" name="city" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="state">State/Province*</label>
+                    <input type="text" id="state" name="state" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="zipCode">Zip/Postal Code*</label>
+                    <input type="text" id="zipCode" name="zipCode" required>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="country">Country*</label>
+                  <input type="text" id="country" name="country" required>
+                </div>
+              </div>
+              
+              <div class="form-section">
+                <h3 class="form-section-title">Media</h3>
+                
+                <div class="form-group">
+                  <label for="images">Property Images*</label>
+                  <div class="file-upload">
+                    <input type="file" id="images" name="images" multiple accept="image/*" required>
+                    <div class="file-upload-label">
+                      <ion-icon name="cloud-upload-outline"></ion-icon>
+                      <span>Drag & drop images or click to browse</span>
+                    </div>
+                  </div>
+                  <div class="image-preview" id="imagePreview"></div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="video">Property Video (optional)</label>
+                  <div class="file-upload">
+                    <input type="file" id="video" name="video" accept="video/*">
+                    <div class="file-upload-label">
+                      <ion-icon name="videocam-outline"></ion-icon>
+                      <span>Drag & drop video or click to browse</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="has3DModel">3D Model Available</label>
+                  <div class="toggle-switch">
+                    <input type="checkbox" id="has3DModel" name="has3DModel">
+                    <label for="has3DModel"></label>
+                  </div>
+                  <p class="form-help-text">Our team will contact you to arrange 3D model creation if checked.</p>
+                </div>
+              </div>
+              
+              <div class="form-section">
+                <h3 class="form-section-title">Contact Information</h3>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contactName">Your Name*</label>
+                    <input type="text" id="contactName" name="contactName" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="contactEmail">Email*</label>
+                    <input type="email" id="contactEmail" name="contactEmail" required>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contactPhone">Phone*</label>
+                    <input type="tel" id="contactPhone" name="contactPhone" required>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-actions">
+                <button type="submit" class="btn submit-listing-btn">Submit Listing</button>
+                <button type="button" class="btn-outline cancel-btn" onclick="window.location.href='index.html'">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo-light.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Brooklyn, New York, United States</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+0123456789" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+0123-456789</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:contact@homeverse.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>contact@homeverse.com</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+
+            <li>
+              <a href="index.html#about" class="footer-link">About</a>
+            </li>
+
+            <li>
+              <a href="blog.html" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">All Properties</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">Locations Map</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="terms.html" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">Promotional Offers</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Customer Care</p>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/wishlist.js"></script>
+  <script src="./assets/js/property-card.js"></script>
+  <script src="./assets/js/api-service.js"></script>
+  <script src="./assets/js/query-manager.js"></script>
+  <script src="./assets/js/enquiry.js"></script>
+  <script src="./assets/js/service-actions.js"></script>
+  <script src="./assets/js/add-listing.js"></script>
+
+  <!-- 
+    - config js link
+  -->
+  <script src="./assets/js/config.js"></script>
+  
+  <!-- 
+    - property data js link
+  -->
+  <script src="./assets/js/property-data.js"></script>
+  
+  <!-- 
+    - blog data js link
+  -->
+  <script src="./assets/js/blog-data.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html> 

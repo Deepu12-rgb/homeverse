@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property 3D View - Homeverse</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/property-3d.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - model-viewer component
+  -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  
+  <style>
+    .property-3d-view {
+      padding: 80px 0;
+    }
+    
+    .property-details-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .property-info {
+      flex: 1;
+      min-width: 300px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: var(--shadow-2, 0 5px 20px rgba(0, 0, 0, 0.1));
+      padding: 30px;
+    }
+    
+    .property-model {
+      flex: 2;
+      min-width: 500px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: var(--shadow-2, 0 5px 20px rgba(0, 0, 0, 0.1));
+      padding: 30px;
+    }
+    
+    .property-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--dark-jungle-green, #1a1a1a);
+    }
+    
+    .property-price {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--orange-soda, #f85a40);
+      margin-bottom: 20px;
+    }
+    
+    .property-address {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: var(--cadet-blue, #666);
+    }
+    
+    .property-address ion-icon {
+      color: var(--orange-soda, #f85a40);
+      font-size: 20px;
+    }
+    
+    .property-features {
+      margin-bottom: 30px;
+    }
+    
+    .feature-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--dark-jungle-green, #1a1a1a);
+    }
+    
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .feature-item ion-icon {
+      color: var(--orange-soda, #f85a40);
+      font-size: 20px;
+    }
+    
+    .property-description {
+      margin-bottom: 30px;
+    }
+    
+    .description-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--dark-jungle-green, #1a1a1a);
+    }
+    
+    .description-text {
+      color: var(--cadet-blue, #666);
+      line-height: 1.6;
+    }
+    
+    .property-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .action-button {
+      background-color: var(--orange-soda, #f85a40);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .action-button:hover {
+      background-color: #e04b32;
+    }
+    
+    .action-button ion-icon {
+      font-size: 20px;
+    }
+    
+    .model-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .model-button {
+      background-color: var(--orange-soda, #f85a40);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .model-button:hover {
+      background-color: #e04b32;
+    }
+    
+    .model-button ion-icon {
+      font-size: 18px;
+    }
+    
+    .model-viewer-container {
+      height: 500px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      background-color: #f5f5f5;
+    }
+    
+    .video-gallery {
+      margin-top: 50px;
+    }
+    
+    .video-gallery-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--dark-jungle-green, #1a1a1a);
+    }
+    
+    .video-container {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-2, 0 5px 20px rgba(0, 0, 0, 0.1));
+    }
+    
+    .property-video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    @media (max-width: 768px) {
+      .property-model {
+        min-width: 100%;
+      }
+      
+      .model-viewer-container {
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+
+          <li>
+            <a href="mailto:deepusrivastav1212@gmail.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <span>deepusrivastav1212@gmail.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="tel:+919027161301" class="header-top-link">
+              <ion-icon name="call-outline"></ion-icon>
+
+              <span>+91 9027161301</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-top-link">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>Kharar, Punjab, India</address>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <ul class="header-top-social-list">
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <button class="header-top-btn">Add Listing</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="index.html" class="logo">
+              <img src="./assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+
+              <li>
+                <a href="index.html" class="navbar-link">Home</a>
+              </li>
+
+              <li>
+                <a href="index.html#about" class="navbar-link">About</a>
+              </li>
+
+              <li>
+                <a href="index.html#service" class="navbar-link">Service</a>
+              </li>
+
+              <li>
+                <a href="index.html#property" class="navbar-link">Property</a>
+              </li>
+
+              <li>
+                <a href="blog.html" class="navbar-link">Blog</a>
+              </li>
+
+              <li>
+                <a href="contact.html" class="navbar-link">Contact</a>
+              </li>
+
+              <li>
+                <a href="#" id="logout-link" class="navbar-link">Logout</a>
+              </li>
+
+            </ul>
+          </div>
+
+        </nav>
+
+        <div class="header-bottom-actions">
+
+          <button class="header-bottom-actions-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+
+            <span>Search</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+
+            <span>Profile</span>
+            
+            <div class="profile-dropdown">
+              <a href="profile.html" class="dropdown-link">My Profile</a>
+              <a href="messages.html" class="dropdown-link">Messages</a>
+              <a href="#" id="logout-link" class="dropdown-link">Logout</a>
+            </div>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Cart">
+            <ion-icon name="cart-outline"></ion-icon>
+
+            <span>Cart</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+
+            <span>Menu</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #PROPERTY 3D VIEW
+      -->
+
+      <section class="property-3d-view">
+        <div class="container">
+          <p class="section-subtitle">3D Property Tour</p>
+          <h2 class="h2 section-title">Explore Property in 3D</h2>
+          
+          <div class="property-details-container">
+            <div class="property-info">
+              <h3 class="property-title">Modern Apartment in City Center</h3>
+              <p class="property-price">$34,900/Month</p>
+              
+              <div class="property-address">
+                <ion-icon name="location-outline"></ion-icon>
+                <address>Belmont Gardens, Chicago</address>
+              </div>
+              
+              <div class="property-features">
+                <h4 class="feature-title">Property Features</h4>
+                <ul class="feature-list">
+                  <li class="feature-item">
+                    <ion-icon name="bed-outline"></ion-icon>
+                    <span>3 Bedrooms</span>
+                  </li>
+                  <li class="feature-item">
+                    <ion-icon name="man-outline"></ion-icon>
+                    <span>2 Bathrooms</span>
+                  </li>
+                  <li class="feature-item">
+                    <ion-icon name="square-outline"></ion-icon>
+                    <span>3450 Sq Ft</span>
+                  </li>
+                  <li class="feature-item">
+                    <ion-icon name="car-outline"></ion-icon>
+                    <span>1 Garage</span>
+                  </li>
+                  <li class="feature-item">
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    <span>Built 2018</span>
+                  </li>
+                  <li class="feature-item">
+                    <ion-icon name="cube-outline"></ion-icon>
+                    <span>3D Model</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="property-description">
+                <h4 class="description-title">Description</h4>
+                <p class="description-text">
+                  This beautiful modern apartment is located in the heart of the city. It features 3 spacious bedrooms, 2 bathrooms, and a large living area with stunning views. The property comes with a fully equipped kitchen, central heating, and air conditioning.
+                </p>
+                <p class="description-text">
+                  Explore the property in 3D to get a better feel for the space and layout. The 3D model allows you to virtually walk through the property from the comfort of your home.
+                </p>
+              </div>
+              
+              <div class="property-actions">
+                <button class="action-button">
+                  <ion-icon name="call-outline"></ion-icon>
+                  Contact Agent
+                </button>
+                <button class="action-button">
+                  <ion-icon name="calendar-outline"></ion-icon>
+                  Schedule Visit
+                </button>
+              </div>
+            </div>
+            
+            <div class="property-model">
+              <div class="model-viewer-container">
+                <model-viewer id="property-model" 
+                              src="./assets/models/sample-house.glb" 
+                              alt="A 3D model of the property" 
+                              camera-controls 
+                              auto-rotate 
+                              ar
+                              poster="./assets/images/model-loading.png">
+                </model-viewer>
+              </div>
+              
+              <div class="model-controls">
+                <button class="model-button" id="rotate-model">
+                  <ion-icon name="refresh-outline"></ion-icon>
+                  Rotate
+                </button>
+                <button class="model-button" id="reset-camera">
+                  <ion-icon name="home-outline"></ion-icon>
+                  Reset View
+                </button>
+                <button class="model-button" id="fullscreen-model">
+                  <ion-icon name="expand-outline"></ion-icon>
+                  Fullscreen
+                </button>
+                <button class="model-button" id="ar-view">
+                  <ion-icon name="cube-outline"></ion-icon>
+                  View in AR
+                </button>
+                <button class="model-button" id="share-model">
+                  <ion-icon name="share-social-outline"></ion-icon>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="video-gallery">
+            <h3 class="video-gallery-title">Property Video Tour</h3>
+            <div class="video-container">
+              <video class="property-video" controls>
+                <source src="./assets/videos/sample-property.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Kharar, Punjab, India</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+919027161301" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+91 9027161301</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:deepusrivastav1212@gmail.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>deepusrivastav1212@gmail.com</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+
+            <li>
+              <a href="index.html#about" class="footer-link">About</a>
+            </li>
+
+            <li>
+              <a href="blog.html" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">All Properties</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">Locations Map</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="terms.html" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">Promotional Offers</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Customer Care</p>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  
+  <!-- 
+    - config js link
+  -->
+  <script src="./assets/js/config.js"></script>
+  
+  <!-- 
+    - buttons js link
+  -->
+  <script src="./assets/js/buttons.js"></script>
+
+  <!-- 
+    - navigation js link
+  -->
+  <script src="./assets/js/navigation.js"></script>
+
+  <!-- 
+    - property 3D js link
+  -->
+  <script src="./assets/js/property-3d.js"></script>
+
+  <!-- 
+    - 3D view controls
+  -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const modelViewer = document.getElementById('property-model');
+      const rotateButton = document.getElementById('rotate-model');
+      const resetButton = document.getElementById('reset-camera');
+      const fullscreenButton = document.getElementById('fullscreen-model');
+      const arButton = document.getElementById('ar-view');
+      const shareButton = document.getElementById('share-model');
+      
+      // Get property ID from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const propertyId = urlParams.get('id') || '1';
+      
+      // Load the correct model based on property ID
+      modelViewer.src = `./assets/models/property-${propertyId}.glb`;
+      
+      // Fallback to sample model if the specific one doesn't exist
+      modelViewer.addEventListener('error', function() {
+        modelViewer.src = './assets/models/sample-house.glb';
+      });
+      
+      // Toggle auto-rotation
+      let isRotating = true;
+      rotateButton.addEventListener('click', function() {
+        isRotating = !isRotating;
+        modelViewer.autoRotate = isRotating;
+        rotateButton.innerHTML = isRotating ? 
+          '<ion-icon name="pause-outline"></ion-icon> Pause' : 
+          '<ion-icon name="refresh-outline"></ion-icon> Rotate';
+      });
+      
+      // Reset camera position
+      resetButton.addEventListener('click', function() {
+        modelViewer.cameraOrbit = '0deg 75deg 2m';
+        modelViewer.cameraTarget = '0m 0m 0m';
+        modelViewer.fieldOfView = '30deg';
+      });
+      
+      // Fullscreen mode
+      fullscreenButton.addEventListener('click', function() {
+        if (!document.fullscreenElement) {
+          modelViewer.requestFullscreen().catch(err => {
+            alert(`Error attempting to enable fullscreen mode: ${err.message}`);
+          });
+        } else {
+          document.exitFullscreen();
+        }
+      });
+      
+      // AR view (only works on compatible devices)
+      arButton.addEventListener('click', function() {
+        modelViewer.activateAR();
+      });
+      
+      // Share model
+      shareButton.addEventListener('click', function() {
+        if (navigator.share) {
+          navigator.share({
+            title: 'Property 3D Model',
+            text: 'Check out this 3D model of a property!',
+            url: window.location.href
+          })
+          .catch(error => console.log('Error sharing:', error));
+        } else {
+          // Fallback for browsers that don't support Web Share API
+          const shareUrl = window.location.href;
+          prompt('Copy this link to share the 3D model:', shareUrl);
+        }
+      });
+    });
+  </script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html> 

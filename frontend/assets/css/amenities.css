@@ -1,0 +1,315 @@
+/**
+ * Amenities Styles for Homeverse
+ */
+
+/* Amenities Modal */
+.amenities-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.amenities-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.amenities-modal.closing {
+  opacity: 0;
+}
+
+.amenities-modal-content {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.amenities-modal.active .amenities-modal-content {
+  transform: scale(1);
+}
+
+/* Modal Header */
+.amenities-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--alice-blue);
+  background-color: var(--cultured);
+}
+
+.amenities-modal-header h3 {
+  margin: 0;
+  color: var(--raisin-black);
+  font-size: 1.5rem;
+}
+
+.amenities-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--raisin-black);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.amenities-modal-close:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Body */
+.amenities-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Amenities Tabs */
+.amenities-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--alice-blue);
+  background-color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.amenity-tab {
+  flex: 1;
+  padding: 15px 10px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--sonic-silver);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.amenity-tab:hover {
+  color: var(--orange-soda);
+}
+
+.amenity-tab.active {
+  color: var(--orange-soda);
+  border-bottom-color: var(--orange-soda);
+}
+
+/* Amenities Content */
+.amenities-content {
+  padding: 20px;
+  flex: 1;
+}
+
+.amenity-category {
+  display: none;
+}
+
+.amenity-category.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Amenities List */
+.amenities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.amenity-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 15px;
+  background-color: var(--cultured);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.amenity-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.amenity-item ion-icon {
+  color: var(--orange-soda);
+  font-size: 24px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.amenity-item span {
+  font-weight: 600;
+  color: var(--raisin-black);
+  margin-bottom: 5px;
+  display: block;
+}
+
+.amenity-description {
+  margin: 5px 0 0;
+  font-size: 0.85rem;
+  color: var(--sonic-silver);
+}
+
+.no-amenities {
+  text-align: center;
+  color: var(--sonic-silver);
+  font-style: italic;
+  padding: 20px;
+}
+
+/* Modal Footer */
+.amenities-modal-footer {
+  padding: 20px;
+  border-top: 1px solid var(--alice-blue);
+  text-align: center;
+}
+
+.schedule-viewing-btn {
+  background-color: var(--orange-soda);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.schedule-viewing-btn:hover {
+  background-color: #e04b32;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .amenities-modal-content {
+    width: 95%;
+    max-height: 95vh;
+  }
+  
+  .amenities-modal-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .amenities-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .amenity-tab {
+    flex: 1 0 50%;
+    padding: 10px 5px;
+    font-size: 0.9rem;
+  }
+  
+  .amenities-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .amenity-tab {
+    flex: 1 0 100%;
+  }
+}
+
+/* Amenities Button */
+.card-footer-actions-btn ion-icon[name="options-outline"] {
+  color: var(--sonic-silver);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.card-footer-actions-btn:hover ion-icon[name="options-outline"] {
+  color: var(--orange-soda);
+  transform: scale(1.1);
+}
+
+/* Amenity Details */
+.amenity-details {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.amenity-icon {
+  font-size: 48px;
+  color: var(--orange-soda);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.amenity-description {
+  text-align: center;
+  color: var(--sonic-silver);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.amenity-features h4 {
+  font-size: 1.2rem;
+  color: var(--raisin-black);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.amenity-image {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.amenity-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Create directory for amenity images */
+@media (max-width: 768px) {
+  .amenity-details {
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  .amenity-icon {
+    font-size: 36px;
+  }
+} 

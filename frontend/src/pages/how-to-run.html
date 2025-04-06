@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Run Homeverse</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      color: #f85a40;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #2c3e50;
+      margin-top: 30px;
+    }
+    code {
+      background-color: #f5f5f5;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .note {
+      background-color: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    .step {
+      margin-bottom: 20px;
+      padding-left: 20px;
+      border-left: 2px solid #f85a40;
+    }
+    .step-number {
+      display: inline-block;
+      background-color: #f85a40;
+      color: white;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>How to Run Homeverse</h1>
+  
+  <div class="note">
+    <strong>Note:</strong> Some features of Homeverse require a running server to work properly. Opening the HTML files directly in your browser will result in limited functionality.
+  </div>
+  
+  <h2>Option 1: Running with Node.js (Recommended)</h2>
+  
+  <div class="step">
+    <span class="step-number">1</span>
+    <strong>Install Node.js</strong>
+    <p>If you don't have Node.js installed, download and install it from <a href="https://nodejs.org/" target="_blank">nodejs.org</a>.</p>
+  </div>
+  
+  <div class="step">
+    <span class="step-number">2</span>
+    <strong>Install MongoDB</strong>
+    <p>Install MongoDB from <a href="https://www.mongodb.com/try/download/community" target="_blank">mongodb.com</a> or use MongoDB Atlas.</p>
+  </div>
+  
+  <div class="step">
+    <span class="step-number">3</span>
+    <strong>Install Dependencies</strong>
+    <p>Open a terminal/command prompt in the project root directory and run:</p>
+    <pre>npm run install-all</pre>
+  </div>
+  
+  <div class="step">
+    <span class="step-number">4</span>
+    <strong>Start the Application</strong>
+    <p>In the same terminal, run:</p>
+    <pre>npm start</pre>
+    <p>This will start both the backend and frontend servers.</p>
+  </div>
+  
+  <div class="step">
+    <span class="step-number">5</span>
+    <strong>Access the Application</strong>
+    <p>Open your browser and navigate to:</p>
+    <pre>http://localhost:3000</pre>
+  </div>
+  
+  <h2>Option 2: Running Frontend Only (Limited Functionality)</h2>
+  
+  <div class="step">
+    <span class="step-number">1</span>
+    <strong>Open index.html</strong>
+    <p>Simply open the <code>index.html</code> file in your browser.</p>
+    <p>Note that features requiring the backend (login, signup, profile management) will not work.</p>
+  </div>
+  
+  <h2>Troubleshooting</h2>
+  
+  <h3>Common Issues:</h3>
+  
+  <ul>
+    <li><strong>API Connection Errors:</strong> Make sure the backend server is running on port 5000.</li>
+    <li><strong>MongoDB Connection Errors:</strong> Ensure MongoDB is running and accessible.</li>
+    <li><strong>Port Already in Use:</strong> If port 3000 or 5000 is already in use, modify the port in the respective server files.</li>
+  </ul>
+  
+  <div class="note">
+    <strong>Need Help?</strong> If you're still having issues, please check the README.md file or contact support.
+  </div>
+  
+  <p><a href="index.html">Back to Homepage</a></p>
+</body>
+</html> 

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions | Homeverse</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    .terms-container {
+      padding: 40px 0;
+    }
+    
+    .terms-header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .terms-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--raisin-black);
+    }
+    
+    .terms-subtitle {
+      font-size: 16px;
+      color: var(--raisin-black-50);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .terms-content {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: var(--raisin-black-50);
+    }
+    
+    .terms-section {
+      margin-bottom: 30px;
+    }
+    
+    .terms-section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--raisin-black);
+    }
+    
+    .terms-section p {
+      margin-bottom: 15px;
+    }
+    
+    .terms-section ul {
+      margin-bottom: 15px;
+      padding-left: 20px;
+    }
+    
+    .terms-section li {
+      margin-bottom: 10px;
+      list-style-type: disc;
+    }
+    
+    .terms-date {
+      margin-top: 40px;
+      font-style: italic;
+      color: var(--raisin-black-50);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+
+          <li>
+            <a href="mailto:info@homeverse.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <span>info@homeverse.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-top-link">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>15/A, Nest Tower, NYC</address>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <ul class="header-top-social-list">
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <button class="header-top-btn">Add Listing</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="index.html" class="logo">
+              <img src="./assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+
+              <li>
+                <a href="index.html" class="navbar-link">Home</a>
+              </li>
+
+              <li>
+                <a href="index.html#about" class="navbar-link">About</a>
+              </li>
+
+              <li>
+                <a href="index.html#service" class="navbar-link">Service</a>
+              </li>
+
+              <li>
+                <a href="index.html#property" class="navbar-link">Property</a>
+              </li>
+
+              <li>
+                <a href="blog.html" class="navbar-link">Blog</a>
+              </li>
+
+              <li>
+                <a href="index.html#contact" class="navbar-link">Contact</a>
+              </li>
+
+            </ul>
+          </div>
+
+        </nav>
+
+        <div class="header-bottom-actions">
+
+          <button class="header-bottom-actions-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+
+            <span>Search</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+
+            <span>Profile</span>
+            
+            <div class="profile-dropdown">
+              <a href="profile.html" class="dropdown-link">My Profile</a>
+              <a href="messages.html" class="dropdown-link">Messages</a>
+              <a href="#" id="logout-link" class="dropdown-link">Logout</a>
+            </div>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Cart">
+            <ion-icon name="cart-outline"></ion-icon>
+
+            <span>Cart</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+
+            <span>Menu</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #TERMS
+      -->
+
+      <section class="terms-container">
+        <div class="container">
+          
+          <div class="terms-header">
+            <h1 class="terms-title">Terms & Conditions</h1>
+            <p class="terms-subtitle">Please read these terms and conditions carefully before using our services</p>
+          </div>
+          
+          <div class="terms-content">
+            <div class="terms-section">
+              <h2 class="terms-section-title">1. Introduction</h2>
+              <p>Welcome to Homeverse. These Terms and Conditions govern your use of our website and services. By accessing or using Homeverse, you agree to be bound by these Terms. If you disagree with any part of the terms, you may not access the service.</p>
+            </div>
+            
+            <div class="terms-section">
+              <h2 class="terms-section-title">2. Definitions</h2>
+              <p>For the purposes of these Terms and Conditions:</p>
+              <ul>
+                <li>"Company", "We", "Us", or "Our" refers to Homeverse.</li>
+                <li>"Service" refers to the Homeverse website and all related services.</li>
+                <li>"User", "You", or "Your" refers to the individual accessing or using the Service.</li>
+                <li>"Content" refers to text, images, videos, audio, and all other forms of information or data.</li>
+                <li>"Property Listing" refers to any real estate property advertised on our platform.</li>
+              </ul>
+            </div>
+            
+            <div class="terms-section">
+              <h2 class="terms-section-title">3. Account Registration</h2>
+              <p>To access certain features of the Service, you may be required to register for an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.</p>
+              <p>You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password. You agree not to disclose your password to any third party. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.</p>
+            </div>
+            
+            <div class="terms-section">
+              <h2 class="terms-section-title">4. Property Listings</h2>
+              <p>Homeverse provides a platform for users to list and browse real estate properties. We do not guarantee the accuracy, completeness, or quality of any listings or content posted by users. We are not responsible for any inaccuracies in listings.</p>
+              <p>If you are a property lister, you represent and warrant that you have the right to list the property and that all information provided is accurate and complete. You are solely responsible for the content of your listings.</p>
+            </div>
+            
+            <div class="terms-section">
+              <h2 class="terms-section-title">5. User Conduct</h2>
+              <p>You agree not to use the Service to:</p>
+              <ul>
+                <li>Violate any applicable laws or regulations.</li>
+                <li>Infringe upon the rights of others, including intellectual property rights.</li>
+                <li>Post false, misleading, or deceptive content.</li>
+                <li>Harass, abuse, or harm another person.</li>
+                <li>Send spam or unsolicited messages.</li>
+                <li>Interfere with or disrupt the Service or servers or networks connected to the Service.</li>
+                <li>Attempt to gain unauthorized access to any portion of the Service.</li>
+              </ul>
+            </div>
+            
+            <div class="terms-section">
+              <h2 class="terms-section-title">6. Intellectual Property</h2>
+              <p>The Service and its original content, features, and functionality are and will remain the exclusive property of Homeverse and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries.</p>
+              <p>Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Homeverse.</p>
+            </div>
+            
+            <div class="terms-section">
+              <h2 class="terms-section-title">7. Limitation of Liability</h2>
+              <p>In no event shall Homeverse, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.</p>
+            </div>
+            
+            <div class="terms-section">
+              <h2 class="terms-section-title">8. Changes to Terms</h2>
+              <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+              <p>By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.</p>
+            </div>
+            
+            <div class="terms-section">
+              <h2 class="terms-section-title">9. Contact Us</h2>
+              <p>If you have any questions about these Terms, please contact us at deepusrivastav1212@gmail.com.</p>
+            </div>
+            
+            <p class="terms-date">Last updated: June 15, 2023</p>
+          </div>
+          
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Kharar, Punjab, India</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+919027161301" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+91 9027161301</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:deepusrivastav1212@gmail.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>deepusrivastav1212@gmail.com</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+
+            <li>
+              <a href="index.html#about" class="footer-link">About</a>
+            </li>
+
+            <li>
+              <a href="blog.html" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">All Properties</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">Locations Map</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="terms.html" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">Promotional Offers</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Customer Care</p>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  
+  <!-- 
+    - config js link
+  -->
+  <script src="./assets/js/config.js"></script>
+  
+  <!-- 
+    - navigation js link
+  -->
+  <script src="./assets/js/navigation.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if user is logged in
+      const token = localStorage.getItem('token');
+      const userElement = document.querySelector('.header-bottom-actions-btn[aria-label="Profile"] span');
+      
+      if (token && userElement) {
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        if (user.name) {
+          userElement.textContent = user.name.split(' ')[0];
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html> 

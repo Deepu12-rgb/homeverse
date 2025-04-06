@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | Homeverse</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    .faq-container {
+      padding: 40px 0;
+    }
+    
+    .faq-header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .faq-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--raisin-black);
+    }
+    
+    .faq-subtitle {
+      font-size: 16px;
+      color: var(--raisin-black-50);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    
+    .faq-question {
+      padding: 20px;
+      background-color: var(--white);
+      font-weight: 600;
+      color: var(--raisin-black);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .faq-question:hover {
+      background-color: var(--cultured);
+    }
+    
+    .faq-question ion-icon {
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    
+    .faq-item.active .faq-question {
+      color: var(--orange-soda);
+    }
+    
+    .faq-item.active .faq-question ion-icon {
+      transform: rotate(180deg);
+    }
+    
+    .faq-item.active .faq-answer {
+      padding: 20px;
+      max-height: 500px;
+    }
+    
+    .faq-answer p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+      color: var(--raisin-black-50);
+    }
+    
+    .faq-answer p:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+
+          <li>
+            <a href="mailto:info@homeverse.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <span>info@homeverse.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-top-link">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>15/A, Nest Tower, NYC</address>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <ul class="header-top-social-list">
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <button class="header-top-btn">Add Listing</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="index.html" class="logo">
+              <img src="./assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+
+              <li>
+                <a href="index.html" class="navbar-link">Home</a>
+              </li>
+
+              <li>
+                <a href="index.html#about" class="navbar-link">About</a>
+              </li>
+
+              <li>
+                <a href="index.html#service" class="navbar-link">Service</a>
+              </li>
+
+              <li>
+                <a href="index.html#property" class="navbar-link">Property</a>
+              </li>
+
+              <li>
+                <a href="blog.html" class="navbar-link">Blog</a>
+              </li>
+
+              <li>
+                <a href="index.html#contact" class="navbar-link">Contact</a>
+              </li>
+
+            </ul>
+          </div>
+
+        </nav>
+
+        <div class="header-bottom-actions">
+
+          <button class="header-bottom-actions-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+
+            <span>Search</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+
+            <span>Profile</span>
+            
+            <div class="profile-dropdown">
+              <a href="profile.html" class="dropdown-link">My Profile</a>
+              <a href="messages.html" class="dropdown-link">Messages</a>
+              <a href="#" id="logout-link" class="dropdown-link">Logout</a>
+            </div>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Cart">
+            <ion-icon name="cart-outline"></ion-icon>
+
+            <span>Cart</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+
+            <span>Menu</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #FAQ
+      -->
+
+      <section class="faq-container">
+        <div class="container">
+          
+          <div class="faq-header">
+            <h1 class="faq-title">Frequently Asked Questions</h1>
+            <p class="faq-subtitle">Find answers to common questions about Homeverse and our services</p>
+          </div>
+          
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>How do I search for properties on Homeverse?</span>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p>You can search for properties on Homeverse by using the search function in the header or by browsing our featured listings on the homepage. You can filter properties by location, price range, property type, and other criteria to find exactly what you're looking for.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>How do I contact a property agent?</span>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p>To contact a property agent, navigate to the property details page of the listing you're interested in. Click on the "Contact Agent" tab, where you'll find a form to send a message directly to the agent. You can also find the agent's contact information, including phone number and email, on the property details page.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>What information do I need to provide when creating an account?</span>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p>When creating an account on Homeverse, you'll need to provide your name, email address, phone number, and a secure password. We may also ask for additional information to verify your identity and help you find properties that match your preferences.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>How can I list my property on Homeverse?</span>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p>To list your property on Homeverse, you need to create an account and click on the "Add Listing" button in the header. You'll be guided through a step-by-step process to provide details about your property, upload photos, set a price, and specify other relevant information. Our team will review your listing before it goes live on the platform.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>What types of properties are available on Homeverse?</span>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p>Homeverse offers a wide range of properties, including apartments, houses, townhouses, condos, villas, commercial spaces, and land. You can find properties for rent or sale, with various amenities and in different locations to suit your needs and preferences.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>How do I schedule a property viewing?</span>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p>To schedule a property viewing, contact the agent listed on the property details page. You can use the contact form, call the agent directly, or send an email. Provide your preferred date and time for the viewing, and the agent will confirm the appointment or suggest alternative times if necessary.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Is my personal information secure on Homeverse?</span>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p>Yes, we take data security very seriously at Homeverse. We use industry-standard encryption and security measures to protect your personal information. We do not share your data with third parties without your consent, except as required by law. You can review our Privacy Policy for more details on how we handle your information.</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Kharar, Punjab, India</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+919027161301" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+91 9027161301</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:deepusrivastav1212@gmail.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>deepusrivastav1212@gmail.com</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+
+            <li>
+              <a href="index.html#about" class="footer-link">About</a>
+            </li>
+
+            <li>
+              <a href="blog.html" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">All Properties</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">Locations Map</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="terms.html" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">Promotional Offers</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Customer Care</p>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  
+  <!-- 
+    - config js link
+  -->
+  <script src="./assets/js/config.js"></script>
+  
+  <!-- 
+    - navigation js link
+  -->
+  <script src="./assets/js/navigation.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // FAQ accordion functionality
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+          // Close all other items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+            }
+          });
+          
+          // Toggle current item
+          item.classList.toggle('active');
+        });
+      });
+      
+      // Check if user is logged in
+      const token = localStorage.getItem('token');
+      const userElement = document.querySelector('.header-bottom-actions-btn[aria-label="Profile"] span');
+      
+      if (token && userElement) {
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        if (user.name) {
+          userElement.textContent = user.name.split(' ')[0];
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html> 

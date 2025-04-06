@@ -1,0 +1,332 @@
+/**
+ * Mortgage Calculator CSS
+ */
+
+.mortgage-calculator-section {
+  padding: 80px 0;
+  background-color: var(--alice-blue);
+}
+
+.mortgage-calculator-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  color: var(--dark-jungle-green);
+  margin-bottom: 15px;
+}
+
+.section-text {
+  color: var(--cadet);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.calculator-container {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-2);
+  padding: 40px;
+  margin-bottom: 60px;
+}
+
+.calculator-intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.calculator-intro h3 {
+  color: var(--dark-jungle-green);
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.property-address {
+  color: var(--cadet);
+  font-style: italic;
+}
+
+.calculator-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 600;
+  color: var(--cadet);
+}
+
+.percentage-symbol {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 600;
+  color: var(--cadet);
+}
+
+.input-with-icon .input-field {
+  padding-left: 30px;
+}
+
+.input-with-icon input[name="interestRate"] {
+  padding-right: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--dark-jungle-green);
+  font-size: 14px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--cultured-1);
+  border-radius: 8px;
+  font-size: 16px;
+  color: var(--dark-jungle-green);
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: var(--orange-soda);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(248, 90, 64, 0.2);
+}
+
+.payment-percentage {
+  font-size: 14px;
+  color: var(--cadet);
+  margin-top: 5px;
+}
+
+.payment-percentage span {
+  font-weight: 600;
+  color: var(--dark-jungle-green);
+}
+
+.submit-btn {
+  background-color: var(--orange-soda);
+  color: var(--white);
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: var(--bittersweet-shimmer, #e04a32);
+}
+
+/* Results Styles */
+.calculator-results {
+  background-color: var(--cultured-2);
+  border-radius: 8px;
+  padding: 30px;
+}
+
+.result-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.result-header h3 {
+  color: var(--dark-jungle-green);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.total-payment {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--dark-jungle-green);
+}
+
+.payment-breakdown {
+  margin-bottom: 25px;
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--cultured-1);
+}
+
+.breakdown-label {
+  font-weight: 600;
+  color: var(--dark-jungle-green);
+}
+
+.breakdown-value {
+  color: var(--dark-jungle-green);
+}
+
+.payment-chart-container {
+  height: 220px;
+  margin-bottom: 25px;
+}
+
+.loan-summary {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.summary-label {
+  font-weight: 600;
+  color: var(--dark-jungle-green);
+}
+
+.summary-value {
+  color: var(--dark-jungle-green);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: var(--orange-soda);
+  color: var(--white);
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  flex: 1;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--bittersweet-shimmer, #e04a32);
+}
+
+.btn-secondary {
+  background-color: var(--white);
+  color: var(--dark-jungle-green);
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid var(--cultured-1);
+  flex: 1;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--cultured-2);
+}
+
+/* Info Cards */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.info-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-2);
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-icon {
+  background-color: rgba(248, 90, 64, 0.1);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.card-icon ion-icon {
+  font-size: 30px;
+  color: var(--orange-soda);
+}
+
+.info-card h3 {
+  color: var(--dark-jungle-green);
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.info-card p {
+  color: var(--cadet);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .calculator-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .calculator-container {
+    padding: 30px 20px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+} 

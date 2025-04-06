@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - Homeverse</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./assets/images/favicon.png" type="image/png">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <!-- ... existing header code ... -->
+  </header>
+
+  <main>
+    <section class="settings-section">
+      <div class="container">
+        <h1 class="section-title">Settings</h1>
+        
+        <div class="settings-container">
+          <!-- Account Settings -->
+          <div class="settings-section">
+            <h2 class="settings-subtitle">Account Settings</h2>
+            <form class="settings-form" id="accountSettingsForm">
+              <div class="input-wrapper">
+                <label class="input-label">Full Name</label>
+                <input type="text" class="input-field" name="fullName" required>
+              </div>
+              
+              <div class="input-wrapper">
+                <label class="input-label">Email Address</label>
+                <input type="email" class="input-field" name="email" required>
+              </div>
+              
+              <div class="input-wrapper">
+                <label class="input-label">Phone Number</label>
+                <input type="tel" class="input-field" name="phone">
+              </div>
+              
+              <button type="submit" class="btn-primary">Save Changes</button>
+            </form>
+          </div>
+          
+          <!-- Password Settings -->
+          <div class="settings-section">
+            <h2 class="settings-subtitle">Password Settings</h2>
+            <form class="settings-form" id="passwordSettingsForm">
+              <div class="input-wrapper">
+                <label class="input-label">Current Password</label>
+                <input type="password" class="input-field" name="currentPassword" required>
+              </div>
+              
+              <div class="input-wrapper">
+                <label class="input-label">New Password</label>
+                <input type="password" class="input-field" name="newPassword" required>
+              </div>
+              
+              <div class="input-wrapper">
+                <label class="input-label">Confirm New Password</label>
+                <input type="password" class="input-field" name="confirmPassword" required>
+              </div>
+              
+              <button type="submit" class="btn-primary">Update Password</button>
+            </form>
+          </div>
+          
+          <!-- Notification Settings -->
+          <div class="settings-section">
+            <h2 class="settings-subtitle">Notification Settings</h2>
+            <form class="settings-form" id="notificationSettingsForm">
+              <div class="toggle-group">
+                <label class="toggle-label">
+                  <span>Email Notifications</span>
+                  <div class="toggle-switch">
+                    <input type="checkbox" class="toggle-input" name="emailNotifications" checked>
+                    <span class="toggle-slider"></span>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="toggle-group">
+                <label class="toggle-label">
+                  <span>Property Alerts</span>
+                  <div class="toggle-switch">
+                    <input type="checkbox" class="toggle-input" name="propertyAlerts" checked>
+                    <span class="toggle-slider"></span>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="toggle-group">
+                <label class="toggle-label">
+                  <span>Newsletter</span>
+                  <div class="toggle-switch">
+                    <input type="checkbox" class="toggle-input" name="newsletter">
+                    <span class="toggle-slider"></span>
+                  </div>
+                </label>
+              </div>
+              
+              <button type="submit" class="btn-primary">Save Preferences</button>
+            </form>
+          </div>
+          
+          <!-- Privacy Settings -->
+          <div class="settings-section">
+            <h2 class="settings-subtitle">Privacy Settings</h2>
+            <form class="settings-form" id="privacySettingsForm">
+              <div class="toggle-group">
+                <label class="toggle-label">
+                  <span>Show Profile to Public</span>
+                  <div class="toggle-switch">
+                    <input type="checkbox" class="toggle-input" name="publicProfile">
+                    <span class="toggle-slider"></span>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="toggle-group">
+                <label class="toggle-label">
+                  <span>Show Saved Properties</span>
+                  <div class="toggle-switch">
+                    <input type="checkbox" class="toggle-input" name="showSavedProperties">
+                    <span class="toggle-slider"></span>
+                  </div>
+                </label>
+              </div>
+              
+              <button type="submit" class="btn-primary">Update Privacy Settings</button>
+            </form>
+          </div>
+          
+          <!-- Danger Zone -->
+          <div class="danger-zone">
+            <h2 class="settings-subtitle">Danger Zone</h2>
+            <p>Once you delete your account, there is no going back. Please be certain.</p>
+            <button class="btn-danger" id="deleteAccountBtn">Delete Account</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- ... existing footer code ... -->
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="./assets/js/settings.js"></script>
+</body>
+</html> 

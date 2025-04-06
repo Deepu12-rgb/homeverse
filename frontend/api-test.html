@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Connection Test - Homeverse</title>
+  <style>
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      color: #2c3e50;
+      margin-top: 0;
+      border-bottom: 2px solid #f1c40f;
+      padding-bottom: 10px;
+    }
+    
+    .test-section {
+      margin-bottom: 30px;
+    }
+    
+    .test-section h2 {
+      color: #3498db;
+      margin-bottom: 15px;
+    }
+    
+    .test-button {
+      background-color: #f1c40f;
+      color: #2c3e50;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    
+    .test-button:hover {
+      background-color: #f39c12;
+    }
+    
+    .result {
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 5px;
+      background-color: #f8f9fa;
+      border-left: 5px solid #3498db;
+    }
+    
+    .success {
+      border-left-color: #2ecc71;
+    }
+    
+    .error {
+      border-left-color: #e74c3c;
+    }
+    
+    pre {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+    
+    .enquiry-form {
+      margin-top: 20px;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+    
+    textarea {
+      min-height: 100px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .back-button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-button:hover {
+      background-color: #2980b9;
+    }
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #f8f9fa;
+    }
+
+    .status-indicator.connected {
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+    }
+
+    .status-indicator.disconnected {
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+    }
+
+    .status-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .status-dot.connected {
+      background-color: #28a745;
+    }
+
+    .status-dot.disconnected {
+      background-color: #dc3545;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>API Connection Test</h1>
+      <a href="index.html" class="back-button">Back to Home</a>
+    </div>
+    
+    <div id="connection-status" class="status-indicator">
+      <div id="status-dot" class="status-dot"></div>
+      <span id="status-text">Checking connection...</span>
+    </div>
+    
+    <div class="test-section">
+      <h2>Health Check</h2>
+      <button id="health-check-btn" class="test-button">Test Health Endpoint</button>
+      <div id="health-result" class="result" style="display: none;"></div>
+    </div>
+    
+    <div class="test-section">
+      <h2>Public Enquiries</h2>
+      <button id="get-enquiries-btn" class="test-button">Get All Enquiries</button>
+      <div id="enquiries-result" class="result" style="display: none;"></div>
+    </div>
+    
+    <div class="test-section">
+      <h2>Submit Enquiry</h2>
+      <form id="enquiry-form" class="enquiry-form">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" value="API Test">
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" required>This is a test message from the API test page.</textarea>
+        </div>
+        
+        <button type="submit" class="test-button">Submit Enquiry</button>
+      </form>
+      <div id="submit-result" class="result" style="display: none;"></div>
+    </div>
+  </div>
+  
+  <script>
+    // Base API URL
+    const API_BASE_URL = 'http://localhost:5000/api';
+    
+    // Connection status elements
+    const connectionStatus = document.getElementById('connection-status');
+    const statusDot = document.getElementById('status-dot');
+    const statusText = document.getElementById('status-text');
+    
+    // Health check button
+    const healthCheckBtn = document.getElementById('health-check-btn');
+    const healthResult = document.getElementById('health-result');
+    
+    // Get enquiries button
+    const getEnquiriesBtn = document.getElementById('get-enquiries-btn');
+    const enquiriesResult = document.getElementById('enquiries-result');
+    
+    // Submit enquiry form
+    const enquiryForm = document.getElementById('enquiry-form');
+    const submitResult = document.getElementById('submit-result');
+    
+    // Check connection status
+    const checkConnectionStatus = async () => {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
+        
+        const response = await fetch(`${API_BASE_URL}/health`, { 
+          signal: controller.signal 
+        });
+        
+        clearTimeout(timeoutId);
+        
+        if (response.ok) {
+          connectionStatus.className = 'status-indicator connected';
+          statusDot.className = 'status-dot connected';
+          statusText.textContent = 'Connected to backend API';
+          return true;
+        } else {
+          connectionStatus.className = 'status-indicator disconnected';
+          statusDot.className = 'status-dot disconnected';
+          statusText.textContent = 'Backend API returned an error';
+          return false;
+        }
+      } catch (error) {
+        connectionStatus.className = 'status-indicator disconnected';
+        statusDot.className = 'status-dot disconnected';
+        statusText.textContent = `Failed to connect to backend API: ${error.message}`;
+        return false;
+      }
+    };
+    
+    // Health check button event
+    healthCheckBtn.addEventListener('click', async () => {
+      try {
+        healthResult.style.display = 'block';
+        healthResult.innerHTML = 'Testing health endpoint...';
+        healthResult.className = 'result';
+        
+        const response = await fetch(`${API_BASE_URL}/health`);
+        const data = await response.json();
+        
+        if (response.ok) {
+          healthResult.className = 'result success';
+          healthResult.innerHTML = `
+            <strong>Success!</strong> Health endpoint is working.
+            <pre>${JSON.stringify(data, null, 2)}</pre>
+          `;
+        } else {
+          healthResult.className = 'result error';
+          healthResult.innerHTML = `
+            <strong>Error!</strong> Health endpoint returned an error.
+            <pre>${JSON.stringify(data, null, 2)}</pre>
+          `;
+        }
+      } catch (error) {
+        healthResult.className = 'result error';
+        healthResult.innerHTML = `
+          <strong>Error!</strong> Failed to connect to health endpoint.
+          <pre>${error.message}</pre>
+        `;
+      }
+    });
+    
+    // Get enquiries button event
+    getEnquiriesBtn.addEventListener('click', async () => {
+      try {
+        enquiriesResult.style.display = 'block';
+        enquiriesResult.innerHTML = 'Getting enquiries...';
+        enquiriesResult.className = 'result';
+        
+        const response = await fetch(`${API_BASE_URL}/public/enquiries`);
+        const data = await response.json();
+        
+        if (response.ok) {
+          enquiriesResult.className = 'result success';
+          enquiriesResult.innerHTML = `
+            <strong>Success!</strong> Retrieved ${data.data ? data.data.length : 0} enquiries.
+            <pre>${JSON.stringify(data, null, 2)}</pre>
+          `;
+        } else {
+          enquiriesResult.className = 'result error';
+          enquiriesResult.innerHTML = `
+            <strong>Error!</strong> Failed to get enquiries.
+            <pre>${JSON.stringify(data, null, 2)}</pre>
+          `;
+        }
+      } catch (error) {
+        enquiriesResult.className = 'result error';
+        enquiriesResult.innerHTML = `
+          <strong>Error!</strong> Failed to connect to enquiries endpoint.
+          <pre>${error.message}</pre>
+        `;
+      }
+    });
+    
+    // Submit enquiry form event
+    enquiryForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      try {
+        submitResult.style.display = 'block';
+        submitResult.innerHTML = 'Submitting enquiry...';
+        submitResult.className = 'result';
+        
+        const formData = new FormData(enquiryForm);
+        const enquiryData = {
+          name: formData.get('name'),
+          email: formData.get('email'),
+          phone: formData.get('phone') || '',
+          subject: formData.get('subject') || 'API Test',
+          message: formData.get('message')
+        };
+        
+        const response = await fetch(`${API_BASE_URL}/public/enquiries`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(enquiryData)
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          submitResult.className = 'result success';
+          submitResult.innerHTML = `
+            <strong>Success!</strong> Enquiry submitted successfully.
+            <pre>${JSON.stringify(data, null, 2)}</pre>
+          `;
+          enquiryForm.reset();
+          
+          // Refresh the enquiries list
+          getEnquiriesBtn.click();
+        } else {
+          submitResult.className = 'result error';
+          submitResult.innerHTML = `
+            <strong>Error!</strong> Failed to submit enquiry.
+            <pre>${JSON.stringify(data, null, 2)}</pre>
+          `;
+        }
+      } catch (error) {
+        submitResult.className = 'result error';
+        submitResult.innerHTML = `
+          <strong>Error!</strong> Failed to connect to submit endpoint.
+          <pre>${error.message}</pre>
+        `;
+      }
+    });
+    
+    // Run connection check and health check on page load
+    window.addEventListener('DOMContentLoaded', async () => {
+      const isConnected = await checkConnectionStatus();
+      if (isConnected) {
+        healthCheckBtn.click();
+        getEnquiriesBtn.click();
+      }
+    });
+  </script>
+</body>
+</html> 

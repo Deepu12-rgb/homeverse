@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Value Estimator - Homeverse</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link - load critical CSS first
+  -->
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  <!-- Feature-specific CSS -->
+  <link rel="stylesheet" href="/assets/css/home-value.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+
+          <li>
+            <a href="mailto:info@homeverse.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <span>info@homeverse.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-top-link">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>15/A, Nest Tower, NYC</address>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <ul class="header-top-social-list">
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <button class="header-top-btn" onclick="window.location.href='add-listing.html'">Add Listing</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="index.html" class="logo">
+          <img src="/assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="index.html" class="logo">
+              <img src="/assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+
+              <li>
+                <a href="index.html" class="navbar-link">Home</a>
+              </li>
+
+              <li>
+                <a href="index.html#about" class="navbar-link">About</a>
+              </li>
+
+              <li>
+                <a href="index.html#service" class="navbar-link">Service</a>
+              </li>
+
+              <li>
+                <a href="index.html#property" class="navbar-link">Property</a>
+              </li>
+
+              <li>
+                <a href="index.html#blog" class="navbar-link">Blog</a>
+              </li>
+
+              <li>
+                <a href="index.html#contact" class="navbar-link">Contact</a>
+              </li>
+
+              <li>
+                <a href="login.html" class="navbar-link">Login</a>
+              </li>
+
+            </ul>
+          </div>
+
+        </nav>
+
+        <div class="header-bottom-actions">
+
+          <button class="header-bottom-actions-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+
+            <span>Search</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+
+            <span>Profile</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Cart">
+            <ion-icon name="cart-outline"></ion-icon>
+
+            <span>Cart</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+
+            <span>Menu</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HOME VALUE ESTIMATOR 
+      -->
+      <section class="home-value-section section">
+        <div class="container">
+          <div class="home-value-wrapper">
+          
+            <div class="section-header">
+              <h2 class="h2 section-title">Home Value Estimator</h2>
+              <p class="section-text">Get an instant estimate of your home's current market value</p>
+            </div>
+
+            <div class="estimator-container">
+              <div class="estimator-intro">
+                <h3>Find out what your home is worth</h3>
+                <p>Start by entering your address below, then provide some details about your property to get an accurate estimate.</p>
+              </div>
+
+              <div class="address-search">
+                <input type="text" id="address-input" placeholder="Enter your home address" class="input-field">
+                <button id="address-submit" class="btn address-btn">Get Started</button>
+              </div>
+
+              <div class="property-details-form" style="display: none;">
+                <h3>Tell us about your property</h3>
+                <p>The more details you provide, the more accurate your estimate will be.</p>
+
+                <form id="property-details">
+                  <div class="form-grid">
+                    <div class="form-group">
+                      <label for="property-type">Property Type</label>
+                      <select id="property-type" name="propertyType" class="input-field">
+                        <option value="house">House</option>
+                        <option value="condo">Condo/Co-op</option>
+                        <option value="townhouse">Townhouse</option>
+                        <option value="luxury">Luxury Property</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="bedrooms">Bedrooms</label>
+                      <select id="bedrooms" name="bedrooms" class="input-field">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3" selected>3</option>
+                        <option value="4">4</option>
+                        <option value="5">5+</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="bathrooms">Bathrooms</label>
+                      <select id="bathrooms" name="bathrooms" class="input-field">
+                        <option value="1">1</option>
+                        <option value="1.5">1.5</option>
+                        <option value="2" selected>2</option>
+                        <option value="2.5">2.5</option>
+                        <option value="3">3</option>
+                        <option value="3.5">3.5</option>
+                        <option value="4">4+</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="square-feet">Square Feet</label>
+                      <input type="number" id="square-feet" name="area" placeholder="e.g., 2000" class="input-field">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="year-built">Year Built</label>
+                      <input type="number" id="year-built" name="yearBuilt" placeholder="e.g., 1990" class="input-field">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="lot-size">Lot Size (sq ft)</label>
+                      <input type="number" id="lot-size" name="lotSize" placeholder="e.g., 5000" class="input-field">
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                      <label class="checkbox-label">
+                        <input type="checkbox" id="garage" name="hasGarage">
+                        <span>Has Garage</span>
+                      </label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                      <label class="checkbox-label">
+                        <input type="checkbox" id="basement" name="hasBasement">
+                        <span>Has Basement</span>
+                      </label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                      <label class="checkbox-label">
+                        <input type="checkbox" id="pool" name="hasPool">
+                        <span>Has Swimming Pool</span>
+                      </label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                      <label class="checkbox-label">
+                        <input type="checkbox" id="renovation" name="recentRenovation">
+                        <span>Recently Renovated</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn submit-btn">Calculate Estimate</button>
+                </form>
+              </div>
+
+              <div class="estimate-results" style="display: none;">
+                <div class="estimate-header">
+                  <h3>Your Home Value Estimate</h3>
+                  <p class="estimate-address">123 Main Street, New York, NY 10001</p>
+                </div>
+
+                <div class="estimate-value">
+                  <div class="value-range">
+                    <span class="low-value">$850,000</span>
+                    <div class="range-bar">
+                      <div class="range-marker"></div>
+                    </div>
+                    <span class="high-value">$950,000</span>
+                  </div>
+                  <div class="estimate-amount">$897,000</div>
+                  <p class="estimate-date">Estimated value as of <span id="estimate-date">October 15, 2023</span></p>
+                </div>
+
+                <div class="estimate-details">
+                  <div class="detail-item">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <div class="detail-content">
+                      <h4>Property Details</h4>
+                      <p><span id="result-bedrooms">3</span> bed, <span id="result-bathrooms">2</span> bath, <span id="result-sqft">2,000</span> sqft</p>
+                    </div>
+                  </div>
+                  <div class="detail-item">
+                    <ion-icon name="trending-up-outline"></ion-icon>
+                    <div class="detail-content">
+                      <h4>Market Trends</h4>
+                      <p>Property values in this area have increased <span id="market-trend">4.5%</span> in the last year</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="action-buttons">
+                  <button class="btn btn-primary" id="sell-home-btn">Sell My Home</button>
+                  <button class="btn btn-secondary" id="update-estimate-btn">Update Estimate</button>
+                  <button class="btn btn-secondary" id="calculate-mortgage-btn">Calculate Mortgage</button>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="info-cards">
+              <div class="info-card">
+                <div class="card-icon">
+                  <ion-icon name="shield-checkmark-outline"></ion-icon>
+                </div>
+                <h3>Trusted Estimates</h3>
+                <p>Our advanced algorithm uses data from millions of home sales to provide accurate estimates.</p>
+              </div>
+              <div class="info-card">
+                <div class="card-icon">
+                  <ion-icon name="trending-up-outline"></ion-icon>
+                </div>
+                <h3>Market Insights</h3>
+                <p>Get local market trends and comparable property sales to understand your home's value.</p>
+              </div>
+              <div class="info-card">
+                <div class="card-icon">
+                  <ion-icon name="cash-outline"></ion-icon>
+                </div>
+                <h3>Selling Guidance</h3>
+                <p>Receive personalized advice on preparing your home for sale to maximize its value.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+        - #CTA
+      -->
+      <section class="cta">
+        <div class="container">
+
+          <div class="cta-card">
+            <div class="card-content">
+              <h2 class="h2 card-title">Looking for a dream home?</h2>
+
+              <p class="card-text">We can help you realize your dream of a new home</p>
+            </div>
+
+            <button class="btn cta-btn">
+              <span>Explore Properties</span>
+
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="/assets/images/logo-light.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>15/A, Nest Tower, NYC</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+0123456789" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+0123-456789</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:info@homeverse.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>info@homeverse.com</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+
+            <li>
+              <a href="index.html#about" class="footer-link">About</a>
+            </li>
+
+            <li>
+              <a href="blog.html" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">All Properties</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">Locations Map</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="terms.html" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">Promotional Offers</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Customer Care</p>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="/assets/js/script.js" defer></script>
+  <script src="/assets/js/config.js" defer></script>
+  <script src="/assets/js/property-data.js" defer></script>
+  <script src="/assets/js/home-value.js" defer></script>
+  
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html> 

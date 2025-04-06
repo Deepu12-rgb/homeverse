@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages | Homeverse</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    .messages-container {
+      padding: 40px 0;
+    }
+    
+    .messages-header {
+      margin-bottom: 30px;
+    }
+    
+    .messages-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--raisin-black);
+    }
+    
+    .messages-subtitle {
+      font-size: 16px;
+      color: var(--raisin-black-50);
+    }
+    
+    .messages-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .message-card {
+      padding: 20px;
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .message-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--alice-blue);
+    }
+    
+    .message-property {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--raisin-black);
+      margin: 0;
+    }
+    
+    .message-date {
+      font-size: 14px;
+      color: var(--raisin-black-50);
+    }
+    
+    .message-sender {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .sender-info {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--raisin-black);
+    }
+    
+    .sender-contact {
+      font-size: 14px;
+      color: var(--raisin-black-50);
+    }
+    
+    .message-content {
+      padding: 15px;
+      background-color: var(--cultured, #f5f5f5);
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--raisin-black);
+    }
+    
+    .message-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    
+    .message-btn {
+      padding: 8px 15px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .reply-btn {
+      background-color: var(--orange-soda, #f85a40);
+      color: white;
+      border: none;
+    }
+    
+    .reply-btn:hover {
+      background-color: #e04b32;
+    }
+    
+    .delete-btn {
+      background-color: transparent;
+      color: var(--raisin-black-50);
+      border: 1px solid var(--alice-blue);
+    }
+    
+    .delete-btn:hover {
+      background-color: #ffebee;
+      color: #c62828;
+      border-color: #ffcdd2;
+    }
+    
+    .no-messages {
+      padding: 40px;
+      text-align: center;
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .no-messages-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--raisin-black);
+    }
+    
+    .no-messages-text {
+      font-size: 16px;
+      color: var(--raisin-black-50);
+      margin-bottom: 20px;
+    }
+    
+    .browse-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: var(--orange-soda, #f85a40);
+      color: white;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    
+    .browse-btn:hover {
+      background-color: #e04b32;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+
+          <li>
+            <a href="mailto:info@homeverse.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <span>info@homeverse.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-top-link">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>15/A, Nest Tower, NYC</address>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <ul class="header-top-social-list">
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <button class="header-top-btn">Add Listing</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="index.html" class="logo">
+              <img src="./assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+
+              <li>
+                <a href="index.html" class="navbar-link">Home</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">About</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">Service</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">Property</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">Blog</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">Contact</a>
+              </li>
+
+            </ul>
+          </div>
+
+        </nav>
+
+        <div class="header-bottom-actions">
+
+          <button class="header-bottom-actions-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+
+            <span>Search</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Cart">
+            <ion-icon name="cart-outline"></ion-icon>
+
+            <span>Cart</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+
+            <span>Profile</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+
+            <span>Menu</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #MESSAGES
+      -->
+
+      <section class="messages-container">
+        <div class="container">
+          
+          <div class="messages-header">
+            <h2 class="messages-title">Your Messages</h2>
+            <p class="messages-subtitle">View and manage your property inquiries</p>
+          </div>
+          
+          <div id="messages-list" class="messages-list">
+            <!-- Messages will be populated by JavaScript -->
+          </div>
+          
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Kharar, Punjab, India</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+919027161301" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+91 9027161301</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:deepusrivastav1212@gmail.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>deepusrivastav1212@gmail.com</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">About</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">All Products</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Locations Map</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Promotional Offers</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Customer Care</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  
+  <!-- 
+    - config js link
+  -->
+  <script src="./assets/js/config.js"></script>
+  
+  <!-- 
+    - navigation js link
+  -->
+  <script src="./assets/js/navigation.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load messages from localStorage
+      loadMessages();
+      
+      // Check if user is logged in
+      const token = localStorage.getItem('token');
+      const userElement = document.querySelector('.header-bottom-actions-btn[aria-label="Profile"] span');
+      
+      if (token && userElement) {
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        if (user.name) {
+          userElement.textContent = user.name.split(' ')[0];
+        }
+      }
+    });
+    
+    function loadMessages() {
+      const messagesContainer = document.getElementById('messages-list');
+      if (!messagesContainer) return;
+      
+      // Get messages from localStorage
+      const messages = JSON.parse(localStorage.getItem('propertyMessages') || '[]');
+      
+      if (messages.length === 0) {
+        // Show no messages message
+        messagesContainer.innerHTML = `
+          <div class="no-messages">
+            <h3 class="no-messages-title">No Messages Yet</h3>
+            <p class="no-messages-text">You haven't sent any messages to property agents yet.</p>
+            <a href="index.html" class="browse-btn">Browse Properties</a>
+          </div>
+        `;
+        return;
+      }
+      
+      // Sort messages by timestamp (newest first)
+      messages.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      
+      // Clear container
+      messagesContainer.innerHTML = '';
+      
+      // Add messages
+      messages.forEach((message, index) => {
+        const messageDate = new Date(message.timestamp);
+        const formattedDate = messageDate.toLocaleDateString() + ' ' + messageDate.toLocaleTimeString();
+        
+        const messageCard = document.createElement('div');
+        messageCard.className = 'message-card';
+        messageCard.dataset.index = index;
+        
+        messageCard.innerHTML = `
+          <div class="message-header">
+            <h3 class="message-property">${message.propertyTitle}</h3>
+            <span class="message-date">${formattedDate}</span>
+          </div>
+          
+          <div class="message-sender">
+            <div class="sender-info">
+              <span>To: ${message.agentName}</span>
+            </div>
+            <div class="sender-contact">
+              <span>${message.email} | ${message.phone || 'No phone provided'}</span>
+            </div>
+          </div>
+          
+          <div class="message-content">
+            ${message.message}
+          </div>
+          
+          <div class="message-actions">
+            <button class="message-btn delete-btn" data-index="${index}">Delete</button>
+            <button class="message-btn reply-btn" data-index="${index}">Reply</button>
+          </div>
+        `;
+        
+        messagesContainer.appendChild(messageCard);
+      });
+      
+      // Add event listeners to buttons
+      const deleteButtons = document.querySelectorAll('.delete-btn');
+      deleteButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const index = parseInt(this.dataset.index);
+          deleteMessage(index);
+        });
+      });
+      
+      const replyButtons = document.querySelectorAll('.reply-btn');
+      replyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const index = parseInt(this.dataset.index);
+          replyToMessage(index);
+        });
+      });
+    }
+    
+    function deleteMessage(index) {
+      // Get messages from localStorage
+      const messages = JSON.parse(localStorage.getItem('propertyMessages') || '[]');
+      
+      // Remove message at index
+      messages.splice(index, 1);
+      
+      // Store updated messages
+      localStorage.setItem('propertyMessages', JSON.stringify(messages));
+      
+      // Reload messages
+      loadMessages();
+    }
+    
+    function replyToMessage(index) {
+      // Get messages from localStorage
+      const messages = JSON.parse(localStorage.getItem('propertyMessages') || '[]');
+      
+      // Get message at index
+      const message = messages[index];
+      
+      // For demo purposes, just show an alert
+      alert(`Reply to ${message.agentName} about ${message.propertyTitle}`);
+      
+      // In a real application, you would open a reply form or redirect to a messaging page
+    }
+  </script>
+
+</body>
+
+</html> 

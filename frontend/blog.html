@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Homeverse</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    .blog-page-container {
+      padding: 40px 0;
+    }
+    
+    .blog-page-header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .blog-page-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--raisin-black);
+    }
+    
+    .blog-page-subtitle {
+      font-size: 16px;
+      color: var(--raisin-black-50);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+    
+    @media (max-width: 768px) {
+      .blog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      }
+    }
+    
+    .blog-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .blog-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .blog-content-top {
+      flex-grow: 1;
+    }
+    
+    .blog-excerpt {
+      margin-top: 15px;
+      color: var(--raisin-black-50);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+
+          <li>
+            <a href="mailto:deepusrivastav1212@gmail.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <span>deepusrivastav1212@gmail.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="tel:+919027161301" class="header-top-link">
+              <ion-icon name="call-outline"></ion-icon>
+
+              <span>+91 9027161301</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-top-link">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>Kharar, Punjab, India</address>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <ul class="header-top-social-list">
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <button class="header-top-btn">Add Listing</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="index.html" class="logo">
+              <img src="./assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+
+              <li>
+                <a href="index.html" class="navbar-link">Home</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">About</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">Service</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">Property</a>
+              </li>
+
+              <li>
+                <a href="blog.html" class="navbar-link">Blog</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">Contact</a>
+              </li>
+
+            </ul>
+          </div>
+
+        </nav>
+
+        <div class="header-bottom-actions">
+
+          <button class="header-bottom-actions-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+
+            <span>Search</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+
+            <span>Profile</span>
+            
+            <div class="profile-dropdown">
+              <a href="profile.html" class="dropdown-link">My Profile</a>
+              <a href="messages.html" class="dropdown-link">Messages</a>
+              <a href="#" id="logout-link" class="dropdown-link">Logout</a>
+            </div>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Cart">
+            <ion-icon name="cart-outline"></ion-icon>
+
+            <span>Cart</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+
+            <span>Menu</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #BLOG PAGE
+      -->
+
+      <section class="blog-page-container">
+        <div class="container">
+          
+          <div class="blog-page-header">
+            <h1 class="blog-page-title">Our Blog</h1>
+            <p class="blog-page-subtitle">Stay updated with the latest news, trends, and insights from the real estate world</p>
+          </div>
+          
+          <div id="blog-grid" class="blog-grid">
+            <!-- Blog posts will be populated by JavaScript -->
+          </div>
+          
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Kharar, Punjab, India</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+919027161301" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+91 9027161301</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:deepusrivastav1212@gmail.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>deepusrivastav1212@gmail.com</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+
+            <li>
+              <a href="index.html#about" class="footer-link">About</a>
+            </li>
+
+            <li>
+              <a href="blog.html" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">All Properties</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">Locations Map</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="terms.html" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">Promotional Offers</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Customer Care</p>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  
+  <!-- 
+    - config js link
+  -->
+  <script src="./assets/js/config.js"></script>
+  
+  <!-- 
+    - blog data js link
+  -->
+  <script src="./assets/js/blog-data.js"></script>
+  
+  <!-- 
+    - navigation js link
+  -->
+  <script src="./assets/js/navigation.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if blogData is defined
+      if (typeof blogData !== 'undefined') {
+        // Populate blog grid
+        const blogGrid = document.getElementById('blog-grid');
+        
+        blogData.forEach(post => {
+          const postElement = document.createElement('div');
+          postElement.className = 'blog-card';
+          
+          postElement.innerHTML = `
+            <figure class="card-banner">
+              <a href="blog-details.html?id=${post.id}">
+                <img src="${post.image}" alt="${post.title}" class="w-100">
+              </a>
+            </figure>
+            
+            <div class="blog-content">
+              <div class="blog-content-top">
+                <ul class="card-meta-list">
+                  <li>
+                    <a href="#" class="card-meta-link">
+                      <ion-icon name="person"></ion-icon>
+                      <span>by: ${post.author}</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="card-meta-link">
+                      <ion-icon name="pricetags"></ion-icon>
+                      <span>${post.category}</span>
+                    </a>
+                  </li>
+                </ul>
+                
+                <h3 class="h3 blog-title">
+                  <a href="blog-details.html?id=${post.id}">${post.title}</a>
+                </h3>
+                
+                <p class="blog-excerpt">${post.excerpt}</p>
+              </div>
+              
+              <div class="blog-content-bottom">
+                <div class="publish-date">
+                  <ion-icon name="calendar"></ion-icon>
+                  <time datetime="${post.dateTime}">${post.date}</time>
+                </div>
+                
+                <a href="blog-details.html?id=${post.id}" class="read-more-btn">Read More</a>
+              </div>
+            </div>
+          `;
+          
+          blogGrid.appendChild(postElement);
+        });
+      } else {
+        console.error('blogData is not defined! Check if blog-data.js is properly loaded.');
+        document.getElementById('blog-grid').innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+            <h2>Error Loading Blog Posts</h2>
+            <p>We're having trouble loading the blog posts. Please try again later.</p>
+          </div>
+        `;
+      }
+      
+      // Check if user is logged in
+      const token = localStorage.getItem('token');
+      const userElement = document.querySelector('.header-bottom-actions-btn[aria-label="Profile"] span');
+      
+      if (token && userElement) {
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        if (user.name) {
+          userElement.textContent = user.name.split(' ')[0];
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html> 

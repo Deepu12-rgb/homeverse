@@ -1,0 +1,242 @@
+/*-----------------------------------*\
+  #PROPERTY SEARCH LAYOUT
+\*-----------------------------------*/
+
+.search-page {
+  padding-top: 140px;
+  padding-bottom: 80px;
+  background-color: var(--cultured-2);
+  min-height: 100vh;
+}
+
+.search-header {
+  margin-bottom: 30px;
+}
+
+.search-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--dark-jungle-green);
+  margin-bottom: 20px;
+}
+
+.search-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.search-count {
+  font-size: 16px;
+  color: var(--cadet);
+}
+
+.search-count span {
+  font-weight: 600;
+  color: var(--orange-soda);
+}
+
+.search-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sort-btn, .view-switch {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  background-color: var(--white);
+  border: 1px solid var(--cultured-1);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cadet);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sort-btn:hover, .view-switch:hover {
+  border-color: var(--orange-soda);
+}
+
+.sort-btn ion-icon, .view-switch ion-icon {
+  font-size: 18px;
+  color: var(--cadet);
+}
+
+/* Property Results takes full width */
+.property-results {
+  width: 100%;
+}
+
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .search-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .property-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  
+  /* Hide filter button since we removed the sidebar */
+  .mobile-filter-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-page {
+    padding-top: 120px;
+  }
+  
+  .search-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .search-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .property-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .search-title {
+    font-size: 24px;
+  }
+  
+  .property-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sort-btn, .view-switch {
+    padding: 6px 12px;
+  }
+}
+
+/* Sorting Dropdown */
+.sort-dropdown {
+  position: relative;
+}
+
+.sort-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 180px;
+  background-color: var(--white);
+  border-radius: 4px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  margin-top: 5px;
+  z-index: 100;
+  display: none;
+}
+
+.sort-dropdown.active .sort-dropdown-menu {
+  display: block;
+}
+
+.sort-option {
+  padding: 8px 15px;
+  font-size: 14px;
+  color: var(--cadet);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sort-option:hover {
+  background-color: rgba(242, 92, 84, 0.1);
+  color: var(--orange-soda);
+}
+
+.sort-option.active {
+  background-color: var(--orange-soda);
+  color: var(--white);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 50px;
+}
+
+.page-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: var(--white);
+  border: 1px solid var(--cultured-1);
+  color: var(--cadet);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-link:hover {
+  border-color: var(--orange-soda);
+  color: var(--orange-soda);
+}
+
+.page-link.active {
+  background-color: var(--orange-soda);
+  border-color: var(--orange-soda);
+  color: var(--white);
+}
+
+.page-link.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* No results message */
+.no-results {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: var(--white);
+  border-radius: 8px;
+}
+
+.no-results-icon {
+  font-size: 60px;
+  color: var(--orange-soda);
+  margin-bottom: 20px;
+}
+
+.no-results-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--dark-jungle-green);
+  margin-bottom: 10px;
+}
+
+.no-results-text {
+  font-size: 16px;
+  color: var(--cadet);
+  max-width: 500px;
+  margin: 0 auto 30px;
+} 

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Properties Map - Homeverse</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/map-styles.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+
+          <li>
+            <a href="mailto:deepusrivastav1212@gmail.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <span>deepusrivastav1212@gmail.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="tel:+919027161301" class="header-top-link">
+              <ion-icon name="call-outline"></ion-icon>
+
+              <span>+91 9027161301</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-top-link">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>Kharar, Punjab, India</address>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <ul class="header-top-social-list">
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <button class="header-top-btn">Add Listing</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="index.html" class="logo">
+              <img src="./assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+
+              <li>
+                <a href="index.html" class="navbar-link">Home</a>
+              </li>
+
+              <li>
+                <a href="index.html#about" class="navbar-link">About</a>
+              </li>
+
+              <li>
+                <a href="index.html#service" class="navbar-link">Service</a>
+              </li>
+
+              <li>
+                <a href="index.html#property" class="navbar-link">Property</a>
+              </li>
+
+              <li>
+                <a href="property-3d.html" class="navbar-link">3D Models</a>
+              </li>
+
+              <li>
+                <a href="properties-map.html" class="navbar-link active">Map</a>
+              </li>
+
+              <li>
+                <a href="blog.html" class="navbar-link">Blog</a>
+              </li>
+
+              <li>
+                <a href="contact.html" class="navbar-link">Contact</a>
+              </li>
+
+            </ul>
+          </div>
+
+        </nav>
+
+        <div class="header-bottom-actions">
+
+          <button class="header-bottom-actions-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+
+            <span>Search</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+
+            <span>Profile</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Cart">
+            <ion-icon name="cart-outline"></ion-icon>
+
+            <span>Cart</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+
+            <span>Menu</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="property-map-hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="h1 hero-title">Find Properties on Map</h1>
+            <p class="hero-text">
+              Explore properties visually with our interactive map. Click on markers to view property details.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+        - #PROPERTY MAP
+      -->
+
+      <section class="properties-map-section">
+        <div class="container">
+          <div class="map-controls-container">
+            <div class="map-filter-controls">
+              <div class="filter-group">
+                <label for="property-type">Property Type</label>
+                <select id="property-type" class="map-filter-select">
+                  <option value="all">All Types</option>
+                  <option value="apartment">Apartment</option>
+                  <option value="house">House</option>
+                  <option value="villa">Villa</option>
+                  <option value="office">Office</option>
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label for="property-status">Status</label>
+                <select id="property-status" class="map-filter-select">
+                  <option value="all">All Status</option>
+                  <option value="for-sale">For Sale</option>
+                  <option value="for-rent">For Rent</option>
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label for="price-range">Price Range</label>
+                <select id="price-range" class="map-filter-select">
+                  <option value="all">Any Price</option>
+                  <option value="0-100000">$0 - $100,000</option>
+                  <option value="100000-300000">$100,000 - $300,000</option>
+                  <option value="300000-500000">$300,000 - $500,000</option>
+                  <option value="500000-1000000">$500,000 - $1,000,000</option>
+                  <option value="1000000+">$1,000,000+</option>
+                </select>
+              </div>
+              
+              <button id="apply-filters" class="filter-button">
+                <ion-icon name="filter"></ion-icon>
+                Apply Filters
+              </button>
+            </div>
+            
+            <div class="map-view-toggle">
+              <button id="toggle-list-view" class="view-toggle-button active">
+                <ion-icon name="list"></ion-icon>
+                List
+              </button>
+              <button id="toggle-map-view" class="view-toggle-button">
+                <ion-icon name="map"></ion-icon>
+                Map
+              </button>
+            </div>
+          </div>
+          
+          <div class="map-content-container">
+            <div id="properties-list-view" class="properties-list-view">
+              <div class="properties-grid">
+                <!-- Property cards will be dynamically generated here -->
+              </div>
+            </div>
+            
+            <div id="properties-map-view" class="properties-map-view">
+              <!-- Main map container -->
+              <div id="property-search-map"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Kharar, Punjab, India</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+919027161301" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+91 9027161301</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:deepusrivastav1212@gmail.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>deepusrivastav1212@gmail.com</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+
+            <li>
+              <a href="index.html#about" class="footer-link">About</a>
+            </li>
+
+            <li>
+              <a href="blog.html" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">All Properties</a>
+            </li>
+
+            <li>
+              <a href="properties-map.html" class="footer-link">Locations Map</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="terms.html" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="index.html#property" class="footer-link">Promotional Offers</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Customer Care</p>
+            </li>
+
+            <li>
+              <a href="login.html" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="profile.html" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="index.html#contact" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - config js link
+  -->
+  <script src="./assets/js/config.js"></script>
+
+  <!-- 
+    - property data
+  -->
+  <script>
+    // Sample property data for the map
+    window.propertiesData = [
+      {
+        id: 1,
+        title: "Modern Apartment in City Center",
+        address: "123 Main St, New York, NY 10001",
+        price: "$34,900",
+        priceUnit: "Month",
+        image: "./assets/images/property-1.jpg",
+        status: "For Sale",
+        latitude: 40.7128,
+        longitude: -74.0060,
+        type: "apartment"
+      },
+      {
+        id: 2,
+        title: "Luxury Villa in Suburban Area",
+        address: "456 Park Ave, Brooklyn, NY 11201",
+        price: "$56,000",
+        priceUnit: "Month",
+        image: "./assets/images/property-2.jpg",
+        status: "For Rent",
+        latitude: 40.6782,
+        longitude: -73.9442,
+        type: "villa"
+      },
+      {
+        id: 3,
+        title: "Family House in Quiet Neighborhood",
+        address: "789 Broadway, Manhattan, NY 10003",
+        price: "$42,500",
+        priceUnit: "Month",
+        image: "./assets/images/property-3.jpg",
+        status: "For Sale",
+        latitude: 40.7309,
+        longitude: -73.9872,
+        type: "house"
+      },
+      {
+        id: 4,
+        title: "Modern Office Space",
+        address: "101 Wall St, New York, NY 10005",
+        price: "$28,800",
+        priceUnit: "Month",
+        image: "./assets/images/property-4.jpg",
+        status: "For Rent",
+        latitude: 40.7065,
+        longitude: -74.0090,
+        type: "office"
+      }
+    ];
+  </script>
+
+  <!-- 
+    - map service js
+  -->
+  <script src="./assets/js/map-service.js"></script>
+
+  <!-- 
+    - properties map specific js
+  -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize property list view
+      initializePropertyList();
+      
+      // Set up view toggle buttons
+      setupViewToggle();
+      
+      // Set up filter controls
+      setupFilterControls();
+    });
+    
+    function initializePropertyList() {
+      const listContainer = document.querySelector('.properties-grid');
+      if (!listContainer) return;
+      
+      // Clear existing contents
+      listContainer.innerHTML = '';
+      
+      // Add each property card
+      window.propertiesData.forEach(property => {
+        const propertyCard = createPropertyCard(property);
+        listContainer.appendChild(propertyCard);
+      });
+    }
+    
+    function createPropertyCard(property) {
+      const card = document.createElement('div');
+      card.className = 'property-card';
+      card.dataset.propertyId = property.id;
+      card.dataset.propertyType = property.type;
+      card.dataset.propertyStatus = property.status.toLowerCase().replace(' ', '-');
+      
+      // Format price for data attribute (remove $ and commas)
+      const priceValue = property.price.replace('$', '').replace(',', '');
+      card.dataset.propertyPrice = priceValue;
+      
+      card.innerHTML = `
+        <figure class="card-banner">
+          <img src="${property.image}" alt="${property.title}" class="w-100">
+          <div class="card-badge">${property.status}</div>
+          <div class="banner-actions">
+            <button class="banner-actions-btn">
+              <ion-icon name="location"></ion-icon>
+              <address>${property.address}</address>
+            </button>
+            <button class="banner-actions-btn view-on-map" data-property-id="${property.id}">
+              <ion-icon name="map"></ion-icon>
+              <span>View on Map</span>
+            </button>
+          </div>
+        </figure>
+        <div class="card-content">
+          <div class="card-price">
+            <strong>${property.price}</strong>/${property.priceUnit}
+          </div>
+          <h3 class="h3 card-title">
+            <a href="property-details.html?id=${property.id}">${property.title}</a>
+          </h3>
+          <div class="card-footer">
+            <a href="property-details.html?id=${property.id}" class="card-btn">View Details</a>
+          </div>
+        </div>
+      `;
+      
+      // Add event listener to "View on Map" button
+      card.querySelector('.view-on-map').addEventListener('click', function() {
+        // Switch to map view
+        toggleView('map');
+        
+        // Center map on this property and open its info window
+        const propertyId = this.dataset.propertyId;
+        highlightPropertyOnMap(propertyId);
+      });
+      
+      return card;
+    }
+    
+    function setupViewToggle() {
+      const listViewBtn = document.getElementById('toggle-list-view');
+      const mapViewBtn = document.getElementById('toggle-map-view');
+      const listView = document.getElementById('properties-list-view');
+      const mapView = document.getElementById('properties-map-view');
+      
+      if (!listViewBtn || !mapViewBtn || !listView || !mapView) return;
+      
+      // Default to list view
+      listView.style.display = 'block';
+      mapView.style.display = 'none';
+      listViewBtn.classList.add('active');
+      mapViewBtn.classList.remove('active');
+      
+      // List view button
+      listViewBtn.addEventListener('click', function() {
+        toggleView('list');
+      });
+      
+      // Map view button
+      mapViewBtn.addEventListener('click', function() {
+        toggleView('map');
+      });
+    }
+    
+    function toggleView(viewType) {
+      const listViewBtn = document.getElementById('toggle-list-view');
+      const mapViewBtn = document.getElementById('toggle-map-view');
+      const listView = document.getElementById('properties-list-view');
+      const mapView = document.getElementById('properties-map-view');
+      
+      if (viewType === 'list') {
+        listView.style.display = 'block';
+        mapView.style.display = 'none';
+        listViewBtn.classList.add('active');
+        mapViewBtn.classList.remove('active');
+      } else {
+        listView.style.display = 'none';
+        mapView.style.display = 'block';
+        listViewBtn.classList.remove('active');
+        mapViewBtn.classList.add('active');
+        
+        // Trigger map resize to ensure it renders correctly
+        const searchMap = window.MapService.getMap('searchMap');
+        if (searchMap) {
+          google.maps.event.trigger(searchMap, 'resize');
+        }
+      }
+    }
+    
+    function highlightPropertyOnMap(propertyId) {
+      const searchMap = window.MapService.getMap('searchMap');
+      if (!searchMap) return;
+      
+      // Find the property data
+      const property = window.propertiesData.find(p => p.id.toString() === propertyId.toString());
+      if (!property) return;
+      
+      // Center the map on this property
+      searchMap.setCenter({
+        lat: parseFloat(property.latitude),
+        lng: parseFloat(property.longitude)
+      });
+      searchMap.setZoom(16);
+      
+      // TODO: Open the info window for this property marker
+    }
+    
+    function setupFilterControls() {
+      const filterButton = document.getElementById('apply-filters');
+      if (!filterButton) return;
+      
+      filterButton.addEventListener('click', function() {
+        applyFilters();
+      });
+    }
+    
+    function applyFilters() {
+      const typeSelect = document.getElementById('property-type');
+      const statusSelect = document.getElementById('property-status');
+      const priceSelect = document.getElementById('price-range');
+      
+      // Get filter values
+      const typeFilter = typeSelect ? typeSelect.value : 'all';
+      const statusFilter = statusSelect ? statusSelect.value : 'all';
+      const priceFilter = priceSelect ? priceSelect.value : 'all';
+      
+      // Filter property cards in list view
+      const propertyCards = document.querySelectorAll('.property-card');
+      
+      propertyCards.forEach(card => {
+        let isVisible = true;
+        
+        // Apply type filter
+        if (typeFilter !== 'all' && card.dataset.propertyType !== typeFilter) {
+          isVisible = false;
+        }
+        
+        // Apply status filter
+        if (statusFilter !== 'all' && card.dataset.propertyStatus !== statusFilter) {
+          isVisible = false;
+        }
+        
+        // Apply price filter
+        if (priceFilter !== 'all') {
+          const price = parseFloat(card.dataset.propertyPrice);
+          const [minPrice, maxPrice] = getPriceRange(priceFilter);
+          
+          if (minPrice !== null && price < minPrice) {
+            isVisible = false;
+          }
+          
+          if (maxPrice !== null && price > maxPrice) {
+            isVisible = false;
+          }
+        }
+        
+        // Show or hide the card
+        card.style.display = isVisible ? 'block' : 'none';
+      });
+      
+      // TODO: Filter markers on the map
+    }
+    
+    function getPriceRange(priceFilter) {
+      switch (priceFilter) {
+        case '0-100000':
+          return [0, 100000];
+        case '100000-300000':
+          return [100000, 300000];
+        case '300000-500000':
+          return [300000, 500000];
+        case '500000-1000000':
+          return [500000, 1000000];
+        case '1000000+':
+          return [1000000, null];
+        default:
+          return [null, null];
+      }
+    }
+  </script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html> 

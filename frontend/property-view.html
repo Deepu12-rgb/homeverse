@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Details - Homeverse</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/wishlist.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+
+          <li>
+            <a href="mailto:info@homeverse.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <span>info@homeverse.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="tel:+0123456789" class="header-top-link">
+              <ion-icon name="call-outline"></ion-icon>
+
+              <span>+0123-456789</span>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <ul class="header-top-social-list">
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <button class="header-top-btn">Add Listing</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="#" class="logo">
+              <img src="./assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+
+              <li>
+                <a href="index.html" class="navbar-link">Home</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">About</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">Service</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">Property</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">Blog</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">Contact</a>
+              </li>
+
+            </ul>
+          </div>
+
+        </nav>
+
+        <div class="header-bottom-actions">
+
+          <button class="header-bottom-actions-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+
+            <span>Search</span>
+          </button>
+
+          <button class="header-bottom-actions-btn wishlist-toggle-btn" aria-label="Wishlist">
+            <div class="wishlist-icon-wrapper">
+              <ion-icon name="heart-outline"></ion-icon>
+              <span class="wishlist-count hidden">0</span>
+            </div>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+
+            <span>Profile</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+
+            <span>Menu</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Wishlist Sidebar -->
+  <div class="wishlist-sidebar">
+    <div class="wishlist-header">
+      <h3 class="wishlist-title">Your Wishlist</h3>
+      <button class="wishlist-close-btn">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+    </div>
+    <div class="wishlist-content">
+      <div class="wishlist-empty">Your wishlist is empty</div>
+      <div class="wishlist-items"></div>
+    </div>
+    <div class="wishlist-footer">
+      <div class="wishlist-total">
+        <div class="wishlist-total-label">Total Value:</div>
+        <div class="wishlist-total-value">$0</div>
+      </div>
+      <div class="wishlist-actions">
+        <button class="wishlist-button contact-agents-btn">Contact Agents</button>
+        <button class="wishlist-button clear-wishlist-btn">Clear Wishlist</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #PROPERTY DETAILS
+      -->
+
+      <section class="property-details">
+        <div class="container">
+          <div class="property-details-wrapper">
+            <div class="property-main-info">
+              <h1 class="property-title">Loading property details...</h1>
+              <p class="property-location"><ion-icon name="location-outline"></ion-icon> <span class="location-text"></span></p>
+              <div class="property-price">$<span class="price-value"></span></div>
+            </div>
+
+            <div class="property-gallery">
+              <div class="main-image">
+                <img src="./assets/images/properties/property-placeholder.jpg" alt="Property Image" class="property-main-image">
+              </div>
+              <div class="thumbnail-container">
+                <!-- Thumbnails will be added dynamically -->
+              </div>
+            </div>
+
+            <div class="property-details-content">
+              <div class="tabs-container">
+                <div class="tabs">
+                  <button class="tab-btn active" data-tab="details">Details</button>
+                  <button class="tab-btn" data-tab="features">Features</button>
+                  <button class="tab-btn" data-tab="3d-model">3D Model</button>
+                  <button class="tab-btn" data-tab="video">Video</button>
+                </div>
+
+                <div class="tab-content active" id="details-tab">
+                  <div class="property-specs">
+                    <div class="spec-item">
+                      <ion-icon name="bed-outline"></ion-icon>
+                      <span class="bedrooms-count">0</span> Bedrooms
+                    </div>
+                    <div class="spec-item">
+                      <ion-icon name="water-outline"></ion-icon>
+                      <span class="bathrooms-count">0</span> Bathrooms
+                    </div>
+                    <div class="spec-item">
+                      <ion-icon name="square-outline"></ion-icon>
+                      <span class="area-value">0</span> sq ft
+                    </div>
+                    <div class="spec-item">
+                      <ion-icon name="home-outline"></ion-icon>
+                      <span class="property-type">Type</span>
+                    </div>
+                  </div>
+                  <div class="property-description">
+                    <h3>Description</h3>
+                    <p class="description-text"></p>
+                  </div>
+                </div>
+
+                <div class="tab-content" id="features-tab">
+                  <h3>Features</h3>
+                  <ul class="features-list">
+                    <!-- Features will be added dynamically -->
+                  </ul>
+                </div>
+
+                <div class="tab-content" id="3d-model-tab">
+                  <h3>3D Model</h3>
+                  <div class="model-container">
+                    <div class="model-placeholder">
+                      <p class="no-model-message hidden">No 3D model available for this property.</p>
+                      <!-- 3D model will be added dynamically -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-content" id="video-tab">
+                  <h3>Property Video</h3>
+                  <div class="video-container">
+                    <div class="video-placeholder">
+                      <p class="no-video-message hidden">No video available for this property.</p>
+                      <!-- Video will be added dynamically -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="property-actions">
+              <button class="btn contact-agent-btn">Contact Agent</button>
+              <!-- Add to Cart button will be added dynamically -->
+            </div>
+
+            <div class="agent-info">
+              <h3>Property Agent</h3>
+              <div class="agent-card">
+                <div class="agent-image">
+                  <img src="./assets/images/agents/default.jpg" alt="Agent" class="agent-photo">
+                </div>
+                <div class="agent-details">
+                  <h4 class="agent-name">Agent Name</h4>
+                  <p class="agent-title">Real Estate Agent</p>
+                  <div class="agent-contact">
+                    <p><ion-icon name="call-outline"></ion-icon> <span class="agent-phone"></span></p>
+                    <p><ion-icon name="mail-outline"></ion-icon> <span class="agent-email"></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-form-container">
+              <h3>Contact Agent</h3>
+              <form class="contact-form">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Your Email</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Your Phone</label>
+                  <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn form-submit-btn">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Brooklyn, New York, United States</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+0123456789" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+0123-456789</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:contact@homeverse.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>contact@homeverse.com</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">About</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">All Products</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Locations Map</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Promotional Offers</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Customer Care</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/wishlist.js"></script>
+  <script src="./assets/js/property-view.js"></script>
+  <script src="./assets/js/property-card.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html> 

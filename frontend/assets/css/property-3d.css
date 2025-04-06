@@ -1,0 +1,242 @@
+/* Property 3D Model and Video Upload Styles */
+
+.video-upload-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow-2, 0 5px 20px rgba(0, 0, 0, 0.1));
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.video-upload-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--dark-jungle-green, #1a1a1a);
+}
+
+.video-upload-description {
+  font-size: 16px;
+  color: var(--cadet-blue, #666);
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.video-upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--dark-jungle-green, #1a1a1a);
+}
+
+.file-input-container {
+  position: relative;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.file-input-container:hover {
+  border-color: var(--orange-soda, #f85a40);
+}
+
+.file-input-container input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-input-icon {
+  font-size: 48px;
+  color: var(--orange-soda, #f85a40);
+  margin-bottom: 15px;
+}
+
+.file-input-text {
+  font-size: 16px;
+  color: var(--cadet-blue, #666);
+  margin-bottom: 5px;
+}
+
+.file-input-subtext {
+  font-size: 14px;
+  color: var(--cadet-blue, #666);
+}
+
+.video-preview {
+  margin-top: 20px;
+  display: none;
+}
+
+.upload-button {
+  background-color: var(--orange-soda, #f85a40);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: none;
+  align-self: flex-start;
+}
+
+.upload-button:hover {
+  background-color: #e04b32;
+}
+
+.upload-progress-container {
+  margin-top: 20px;
+}
+
+.upload-progress {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  display: none;
+}
+
+.upload-status {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.info-message {
+  color: #0066cc;
+}
+
+.error-message {
+  color: #cc0000;
+}
+
+.success-message {
+  color: #00cc66;
+}
+
+.model-container {
+  margin-top: 30px;
+  display: none;
+}
+
+.model-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--dark-jungle-green, #1a1a1a);
+}
+
+.model-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.model-button {
+  background-color: var(--orange-soda, #f85a40);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.model-button:hover {
+  background-color: #e04b32;
+}
+
+.model-button ion-icon {
+  font-size: 18px;
+}
+
+.property-badge {
+  display: inline-block;
+  background-color: var(--orange-soda, #f85a40);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .video-upload-container {
+    padding: 20px;
+  }
+  
+  .file-input-container {
+    padding: 20px;
+  }
+  
+  .upload-button {
+    width: 100%;
+  }
+}
+
+/* 3D model viewer styles */
+model-viewer {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+}
+
+.video-tips {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-left: 4px solid var(--orange-soda);
+}
+
+.video-tips h4 {
+  color: var(--raisin-black);
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.video-tips ul {
+  padding-left: 20px;
+}
+
+.video-tips li {
+  margin-bottom: 8px;
+  color: var(--cadet-blue);
+  line-height: 1.5;
+}
+
+.video-tips li:last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Property 3D Model Stylesheet
+ */ 

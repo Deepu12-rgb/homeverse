@@ -1,0 +1,83 @@
+/**
+ * Service Actions Styles for Homeverse
+ */
+
+/* Notification */
+.service-notification {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--orange-soda);
+  color: var(--white);
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1200;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 90%;
+  transition: bottom 0.3s ease;
+}
+
+.service-notification.show {
+  bottom: 30px;
+}
+
+.service-notification.error {
+  background-color: #e74c3c;
+}
+
+/* No Properties Message */
+.no-properties-message {
+  text-align: center;
+  padding: 30px;
+  background-color: var(--cultured);
+  border-radius: 10px;
+  margin: 30px 0;
+  color: var(--cadet);
+  font-size: 18px;
+  display: none;
+}
+
+/* Show All Button */
+.show-all-properties {
+  display: none;
+  margin: 30px auto;
+  background-color: var(--orange-soda);
+  color: var(--white);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.show-all-properties:hover {
+  background-color: var(--bittersweet);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .service-notification {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .service-notification.show {
+    bottom: 20px;
+  }
+
+  .no-properties-message {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .show-all-properties {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+} 

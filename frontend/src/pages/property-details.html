@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Details | Homeverse</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/property-3d.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - model-viewer component
+  -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <style>
+    /* Additional styles for property details page */
+    .property-details-container {
+      padding: 40px 0;
+    }
+
+    .property-details-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    @media (min-width: 768px) {
+      .property-details-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .property-image-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .property-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .property-info {
+      padding: 20px;
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .property-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--raisin-black);
+    }
+
+    .property-price {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--orange-soda);
+      margin-bottom: 15px;
+    }
+
+    .property-location {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 15px;
+      color: var(--raisin-black-50);
+    }
+
+    .property-description {
+      margin-bottom: 20px;
+      line-height: 1.6;
+      color: var(--raisin-black-50);
+    }
+
+    .property-features {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--alice-blue);
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .feature-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--raisin-black);
+    }
+
+    .feature-label {
+      font-size: 14px;
+      color: var(--raisin-black-50);
+    }
+
+    .property-agent {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .agent-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .agent-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .agent-name {
+      font-weight: 600;
+      color: var(--raisin-black);
+    }
+
+    .agent-title {
+      font-size: 14px;
+      color: var(--raisin-black-50);
+    }
+
+    .property-3d-map-container {
+      margin-top: 40px;
+    }
+
+    .tab-container {
+      margin-bottom: 20px;
+    }
+
+    .tab-buttons {
+      display: flex;
+      border-bottom: 1px solid var(--alice-blue);
+    }
+
+    .tab-button {
+      padding: 12px 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--raisin-black-50);
+      position: relative;
+    }
+
+    .tab-button.active {
+      color: var(--orange-soda);
+    }
+
+    .tab-button.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--orange-soda);
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px 0;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    #property-3d-viewer {
+      width: 100%;
+      height: 400px;
+      background-color: var(--alice-blue);
+      border-radius: 8px;
+      position: relative;
+    }
+
+    #property-map {
+      width: 100%;
+      height: 400px;
+      border-radius: 8px;
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      color: var(--raisin-black);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-button:hover {
+      color: var(--orange-soda);
+    }
+    
+    .property-features-container {
+      margin-top: 20px;
+    }
+    
+    .property-features-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    @media (max-width: 576px) {
+      .property-features-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .property-features-list .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 5px;
+    }
+    
+    .property-features-list .feature-item ion-icon {
+      color: var(--orange-soda);
+      font-size: 18px;
+    }
+    
+    .property-badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 15px;
+    }
+    
+    .property-badge.green {
+      background-color: var(--bittersweet-shimmer, #c81c57);
+      color: white;
+    }
+    
+    .property-badge.orange {
+      background-color: var(--orange-soda, #f85a40);
+      color: white;
+    }
+    
+    /* Contact Agent Styles */
+    .contact-agent-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 20px;
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    @media (min-width: 768px) {
+      .contact-agent-container {
+        grid-template-columns: 1fr 2fr;
+      }
+    }
+    
+    .agent-contact-info {
+      padding: 20px;
+      background-color: var(--cultured, #f5f5f5);
+      border-radius: 8px;
+    }
+    
+    .agent-header {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .agent-name-large {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 5px;
+      color: var(--raisin-black);
+    }
+    
+    .agent-title-large {
+      font-size: 14px;
+      color: var(--raisin-black-50);
+      margin: 0 0 10px;
+    }
+    
+    .agent-contact {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 5px 0;
+      font-size: 14px;
+      color: var(--raisin-black-50);
+    }
+    
+    .message-form-container {
+      padding: 20px;
+    }
+    
+    .form-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 20px;
+      color: var(--raisin-black);
+    }
+    
+    .agent-contact-form {
+      display: grid;
+      gap: 15px;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .form-group label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--raisin-black);
+    }
+    
+    .form-control {
+      padding: 10px 15px;
+      border: 1px solid var(--alice-blue);
+      border-radius: 4px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+    
+    .form-control:focus {
+      border-color: var(--orange-soda);
+      outline: none;
+    }
+    
+    .message-status {
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      display: none;
+    }
+    
+    .message-status.success {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      border: 1px solid #c8e6c9;
+      display: block;
+    }
+    
+    .message-status.error {
+      background-color: #ffebee;
+      color: #c62828;
+      border: 1px solid #ffcdd2;
+      display: block;
+    }
+    
+    /* Profile Dropdown Styles */
+    .header-bottom-actions-btn[aria-label="Profile"] {
+      position: relative;
+    }
+    
+    .profile-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 180px;
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+      z-index: 100;
+      display: none;
+    }
+    
+    .header-bottom-actions-btn[aria-label="Profile"]:hover .profile-dropdown {
+      display: block;
+    }
+    
+    .dropdown-link {
+      display: block;
+      padding: 10px 15px;
+      color: var(--raisin-black);
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .dropdown-link:hover {
+      background-color: var(--cultured, #f5f5f5);
+      color: var(--orange-soda);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+
+          <li>
+            <a href="mailto:info@homeverse.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <span>info@homeverse.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-top-link">
+              <ion-icon name="location-outline"></ion-icon>
+
+              <address>15/A, Nest Tower, NYC</address>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <ul class="header-top-social-list">
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <button class="header-top-btn">Add Listing</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="#" class="logo">
+              <img src="./assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+
+              <li>
+                <a href="index.html" class="navbar-link">Home</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">About</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">Service</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">Property</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">Blog</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-link">Contact</a>
+              </li>
+
+            </ul>
+          </div>
+
+        </nav>
+
+        <div class="header-bottom-actions">
+
+          <button class="header-bottom-actions-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+
+            <span>Search</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Cart">
+            <ion-icon name="cart-outline"></ion-icon>
+
+            <span>Cart</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+
+            <span>Profile</span>
+            
+            <div class="profile-dropdown">
+              <a href="profile.html" class="dropdown-link">My Profile</a>
+              <a href="messages.html" class="dropdown-link">Messages</a>
+              <a href="#" id="logout-link" class="dropdown-link">Logout</a>
+            </div>
+          </button>
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+
+            <span>Menu</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #PROPERTY DETAILS
+      -->
+
+      <section class="property-details-container">
+        <div class="container">
+          
+          <a href="index.html" class="back-button">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+            Back to Listings
+          </a>
+
+          <div id="property-details">
+            <div class="property-details-grid">
+              <div class="property-image-container">
+                <img src="./assets/images/property-1.jpg" alt="Property Image" class="property-image">
+              </div>
+
+              <div class="property-info">
+                <h2 class="property-title">New Apartment Nice View</h2>
+                <div class="property-price">$34,900/Month</div>
+                
+                <div class="property-location">
+                  <ion-icon name="location-outline"></ion-icon>
+                  <span class="property-location">Belmont Gardens, Chicago</span>
+                </div>
+                
+                <p class="property-description">
+                  Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood Floors, New Kitchen, New Bathroom, New Roof, and New Windows.
+                </p>
+                
+                <div class="property-features">
+                  <div class="feature-item">
+                    <span class="feature-value property-bedrooms">3</span>
+                    <span class="feature-label">Bedrooms</span>
+                  </div>
+                  
+                  <div class="feature-item">
+                    <span class="feature-value property-bathrooms">2</span>
+                    <span class="feature-label">Bathrooms</span>
+                  </div>
+                  
+                  <div class="feature-item">
+                    <span class="feature-value property-area">3450</span>
+                    <span class="feature-label">Square Ft</span>
+                  </div>
+                </div>
+                
+                <div class="property-badge property-type green">For Rent</div>
+                
+                <div class="property-features-container">
+                  <h3 class="h3" style="margin: 20px 0 10px;">Property Features</h3>
+                  <ul class="property-features-list">
+                    <!-- Features will be populated by JavaScript -->
+                    <li class="feature-item">
+                      <ion-icon name="checkmark-circle-outline"></ion-icon>
+                      <span>Central Air Conditioning</span>
+                    </li>
+                    <li class="feature-item">
+                      <ion-icon name="checkmark-circle-outline"></ion-icon>
+                      <span>Hardwood Floors</span>
+                    </li>
+                    <li class="feature-item">
+                      <ion-icon name="checkmark-circle-outline"></ion-icon>
+                      <span>Stainless Steel Appliances</span>
+                    </li>
+                    <li class="feature-item">
+                      <ion-icon name="checkmark-circle-outline"></ion-icon>
+                      <span>Walk-in Closets</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div class="property-agent">
+                  <img src="./assets/images/author.jpg" alt="Agent" class="agent-image">
+                  <div class="agent-info">
+                    <div class="agent-name">William Seklo</div>
+                    <div class="agent-title">Estate Agent</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="property-3d-map-container">
+              <div class="tab-container">
+                <div class="tab-buttons">
+                  <button class="tab-button active" data-tab="3d-view">3D View</button>
+                  <button class="tab-button" data-tab="map-view">Map Location</button>
+                  <button class="tab-button" data-tab="contact-agent">Contact Agent</button>
+                </div>
+                
+                <div class="tab-content active" id="3d-view">
+                  <div id="property-3d-viewer"></div>
+                </div>
+                
+                <div class="tab-content" id="map-view">
+                  <div id="property-map"></div>
+                </div>
+                
+                <div class="tab-content" id="contact-agent">
+                  <div class="contact-agent-container">
+                    <div class="agent-contact-info">
+                      <div class="agent-header">
+                        <img src="./assets/images/author.jpg" alt="Agent" class="agent-image">
+                        <div>
+                          <h3 class="agent-name-large">William Seklo</h3>
+                          <p class="agent-title-large">Estate Agent</p>
+                          <p class="agent-contact"><ion-icon name="call-outline"></ion-icon> <span class="agent-phone">(312) 555-1234</span></p>
+                          <p class="agent-contact"><ion-icon name="mail-outline"></ion-icon> <span class="agent-email">william@homeverse.com</span></p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="message-form-container">
+                      <h3 class="form-title">Send a Message</h3>
+                      <form id="agent-contact-form" class="agent-contact-form">
+                        <div class="form-group">
+                          <label for="name">Your Name</label>
+                          <input type="text" id="name" name="name" required class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                          <label for="email">Your Email</label>
+                          <input type="email" id="email" name="email" required class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                          <label for="phone">Your Phone</label>
+                          <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                          <label for="message">Message</label>
+                          <textarea id="message" name="message" rows="4" required class="form-control" placeholder="I'm interested in this property..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                          <button type="submit" class="submit-btn">Send Message</button>
+                        </div>
+                        
+                        <div id="message-status" class="message-status"></div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- 
+        - #PROPERTY 3D MODEL
+      -->
+
+      <section class="property-3d-section">
+        <div class="container">
+          <p class="section-subtitle">3D Property Tour</p>
+          <h2 class="h2 section-title">Explore Property in 3D</h2>
+          
+          <div class="property-details-container">
+            <div class="property-model">
+              <div class="model-viewer-container">
+                <model-viewer id="property-model" 
+                              src="./assets/models/sample-house.glb" 
+                              alt="A 3D model of the property" 
+                              camera-controls 
+                              auto-rotate 
+                              ar
+                              poster="./assets/images/model-loading.png">
+                </model-viewer>
+              </div>
+              
+              <div class="model-controls">
+                <button class="model-button" id="rotate-model">
+                  <ion-icon name="refresh-outline"></ion-icon>
+                  Rotate
+                </button>
+                <button class="model-button" id="reset-camera">
+                  <ion-icon name="home-outline"></ion-icon>
+                  Reset View
+                </button>
+                <button class="model-button" id="fullscreen-model">
+                  <ion-icon name="expand-outline"></ion-icon>
+                  Fullscreen
+                </button>
+                <button class="model-button" id="ar-view">
+                  <ion-icon name="cube-outline"></ion-icon>
+                  View in AR
+                </button>
+                <a href="property-3d-view.html" class="model-button">
+                  <ion-icon name="open-outline"></ion-icon>
+                  View Full 3D Tour
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="video-gallery">
+            <h3 class="video-gallery-title">Property Video Tour</h3>
+            <div class="video-container">
+              <video class="property-video" controls>
+                <source src="./assets/videos/sample-property.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          
+          <!-- Agent Section with 3D Upload -->
+          <div class="agent-3d-section">
+            <h3 class="h3 section-title">Are you the agent for this property?</h3>
+            <p class="section-text">Upload a video of the property to generate a 3D model that potential buyers can explore.</p>
+            
+            <div class="video-upload-container">
+              <h3 class="video-upload-title">Upload Property Video</h3>
+              <p class="video-upload-description">
+                Upload a video of your property to automatically generate a 3D model. Walk through the property with your camera to capture all angles for the best results.
+              </p>
+              
+              <form id="video-upload-form" class="video-upload-form">
+                <input type="hidden" id="property-id" value="123">
+                
+                <div class="form-group">
+                  <label for="property-video" class="form-label">Property Video</label>
+                  <div class="file-input-container">
+                    <ion-icon name="videocam" class="file-input-icon"></ion-icon>
+                    <p class="file-input-text">Drag and drop your video here or click to browse</p>
+                    <p class="file-input-subtext">Supported formats: MP4, MOV, AVI (Max size: 100MB)</p>
+                    <input type="file" id="property-video" accept="video/*">
+                  </div>
+                </div>
+                
+                <div id="video-preview" class="video-preview"></div>
+                
+                <div class="upload-progress-container">
+                  <progress id="upload-progress" class="upload-progress" value="0" max="100"></progress>
+                  <p id="upload-status" class="upload-status"></p>
+                </div>
+                
+                <button type="submit" id="upload-button" class="upload-button">Generate 3D Model</button>
+              </form>
+            </div>
+            
+            <div id="model-container" class="model-container">
+              <h3 class="model-title">3D Model Preview</h3>
+              
+              <model-viewer src="./assets/models/sample-house.glb" 
+                            alt="A 3D model of the property" 
+                            camera-controls 
+                            auto-rotate 
+                            ar
+                            poster="./assets/images/model-loading.png">
+              </model-viewer>
+              
+              <div class="model-controls">
+                <button class="model-button">
+                  <ion-icon name="save-outline"></ion-icon>
+                  Save Model
+                </button>
+                <button class="model-button">
+                  <ion-icon name="share-social-outline"></ion-icon>
+                  Share
+                </button>
+                <button class="model-button">
+                  <ion-icon name="download-outline"></ion-icon>
+                  Download
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Kharar, Punjab, India</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+919027161301" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+91 9027161301</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:deepusrivastav1212@gmail.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>deepusrivastav1212@gmail.com</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">About</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">All Products</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Locations Map</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Promotional Offers</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Customer Care</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  
+  <!-- 
+    - config js link
+  -->
+  <script src="./assets/js/config.js"></script>
+  
+  <!-- 
+    - property data js link
+  -->
+  <script src="./assets/js/property-data.js"></script>
+  
+  <!-- 
+    - property view js link
+  -->
+  <script src="./assets/js/property-view.js"></script>
+
+  <!-- 
+    - navigation js link
+  -->
+  <script src="./assets/js/navigation.js"></script>
+
+  <!-- 
+    - property 3D js link
+  -->
+  <script src="./assets/js/property-3d.js"></script>
+
+  <!-- 
+    - 3D view controls
+  -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const modelViewer = document.getElementById('property-model');
+      if (!modelViewer) return;
+      
+      const rotateButton = document.getElementById('rotate-model');
+      const resetButton = document.getElementById('reset-camera');
+      const fullscreenButton = document.getElementById('fullscreen-model');
+      const arButton = document.getElementById('ar-view');
+      
+      // Toggle auto-rotation
+      let isRotating = true;
+      rotateButton.addEventListener('click', function() {
+        isRotating = !isRotating;
+        modelViewer.autoRotate = isRotating;
+        rotateButton.innerHTML = isRotating ? 
+          '<ion-icon name="pause-outline"></ion-icon> Pause' : 
+          '<ion-icon name="refresh-outline"></ion-icon> Rotate';
+      });
+      
+      // Reset camera position
+      resetButton.addEventListener('click', function() {
+        modelViewer.cameraOrbit = '0deg 75deg 2m';
+        modelViewer.cameraTarget = '0m 0m 0m';
+        modelViewer.fieldOfView = '30deg';
+      });
+      
+      // Fullscreen mode
+      fullscreenButton.addEventListener('click', function() {
+        if (!document.fullscreenElement) {
+          modelViewer.requestFullscreen().catch(err => {
+            alert(`Error attempting to enable fullscreen mode: ${err.message}`);
+          });
+        } else {
+          document.exitFullscreen();
+        }
+      });
+      
+      // AR view (only works on compatible devices)
+      arButton.addEventListener('click', function() {
+        modelViewer.activateAR();
+      });
+    });
+  </script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Tab functionality
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons and contents
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+          
+          // Add active class to clicked button and corresponding content
+          button.classList.add('active');
+          const tabId = button.dataset.tab;
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+      
+      // Check if user is logged in
+      const token = localStorage.getItem('token');
+      const userElement = document.querySelector('.header-bottom-actions-btn[aria-label="Profile"] span');
+      
+      if (token && userElement) {
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        if (user.name) {
+          userElement.textContent = user.name.split(' ')[0];
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html> 
