@@ -1,58 +1,65 @@
-# Homeverse - Modern Real Estate Platform
+# Homeverse - Real Estate Website
 
-## Overview
-Homeverse is a modern real estate platform that provides a seamless experience for buying, selling, and renting properties. Built with modern web technologies, it offers a rich set of features inspired by industry leaders like Zillow.
+A modern and feature-rich real estate website built with HTML, CSS, and JavaScript. This project provides a comprehensive platform for property listing, searching, and management.
 
 ## Features
-- **Advanced Property Search**: Filter properties by price, location, type, and amenities
-- **Home Value Estimator**: Get estimated property values based on market data
-- **User Profiles**: Manage your listings, saved properties, and account settings
-- **Interactive Property Listings**: Detailed property information with high-quality images
-- **Responsive Design**: Seamless experience across all devices
-- **Authentication System**: Secure user registration and login
-- **Property Management**: List, edit, and manage property listings
-- **Mortgage Calculator**: Calculate monthly payments and loan terms
 
-## Tech Stack
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Styling**: Custom CSS with responsive design
-- **Icons**: Ionicons
-- **Images**: Optimized property and UI images
-- **Fonts**: Nunito Sans, Poppins
+- 🏠 Property Listings with detailed information
+- 🗺️ Interactive Maps Integration
+- 🔍 Advanced Property Search
+- 💖 Wishlist & Property Comparison
+- 📱 Responsive Design
+- 🤖 AI Assistant (Sarasvati) for user support
+- 🏷️ Property Categories and Filtering
+- 📊 Mortgage Calculator
+- 🖼️ Image Galleries
+- 📍 Location-based Search
+
+## Live Demo
+
+Visit the live website: [Homeverse](https://Deepu12-rgb.github.io/homeverse/)
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Google Maps API
+- Local Storage
+- Responsive Design
+- Ion Icons
 
 ## Getting Started
 
-### Prerequisites
-- Web browser (Chrome, Firefox, Safari, or Edge recommended)
-- Text editor (VS Code, Sublime Text, etc.)
-- Basic understanding of HTML, CSS, and JavaScript
-
-### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/homeverse.git
+   git clone https://github.com/Deepu12-rgb/homeverse.git
    ```
+
 2. Navigate to the project directory:
    ```bash
    cd homeverse
    ```
-3. Open the project in your preferred text editor
-4. Launch the application by opening `index.html` in your web browser
+
+3. Open `frontend/index.html` in your browser to view the website.
 
 ## Project Structure
+
 ```
 homeverse/
-├── frontend/
-│   ├── assets/
-│   │   ├── css/
-│   │   ├── images/
-│   │   └── js/
-│   ├── index.html
-│   └── other HTML files
-└── README.md
+├── frontend/              # Frontend files
+│   ├── assets/           # Static assets
+│   │   ├── css/         # Stylesheets
+│   │   ├── js/         # JavaScript files
+│   │   ├── images/     # Images
+│   │   └── models/     # 3D models
+│   ├── index.html      # Home page
+│   └── ...            # Other HTML pages
+└── backend/            # Backend files (if applicable)
 ```
 
 ## Contributing
+
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
@@ -60,12 +67,14 @@ homeverse/
 5. Open a Pull Request
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgments
-- Design inspiration from modern real estate platforms
-- Icons provided by Ionicons
-- Fonts from Google Fonts
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+Your Name - [@YourTwitter](https://twitter.com/YourTwitter)
+
+Project Link: [https://github.com/Deepu12-rgb/homeverse](https://github.com/Deepu12-rgb/homeverse)
 
 <div align="center">
   
