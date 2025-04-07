@@ -5,25 +5,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homeverse - Find your dream house</title>
+  <title>Homeverse - Your Dream Home Awaits</title>
+
+  <!-- Base URL for relative paths -->
+  <base href="/homeverse/frontend/">
 
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg+xml">
 
   <!-- 
     - custom css link - load critical CSS first
   -->
-  <link rel="stylesheet" href="/assets/css/reset.css">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   
   <!-- Feature-specific CSS -->
-  <link rel="stylesheet" href="/assets/css/wishlist.css">
-  <link rel="stylesheet" href="/assets/css/enquiry.css">
-  <link rel="stylesheet" href="/assets/css/service-actions.css">
-  <link rel="stylesheet" href="/assets/css/amenities.css">
-  <link rel="stylesheet" href="/assets/css/location.css">
+  <link rel="stylesheet" href="assets/css/wishlist.css">
+  <link rel="stylesheet" href="assets/css/enquiry.css">
+  <link rel="stylesheet" href="assets/css/service-actions.css">
+  <link rel="stylesheet" href="assets/css/amenities.css">
+  <link rel="stylesheet" href="assets/css/location.css">
 
   <!-- 
     - google font link
@@ -107,13 +110,13 @@
       <div class="container">
 
         <a href="#" class="logo">
-          <img src="./assets/images/logo.png" alt="Homeverse logo">
+          <img src="assets/images/logo.png" alt="Homeverse logo">
         </a>
 
         <nav class="navbar" data-navbar>
           <div class="navbar-top">
             <a href="#" class="logo">
-              <img src="./assets/images/logo.png" alt="Homeverse logo">
+              <img src="assets/images/logo.png" alt="Homeverse logo">
             </a>
 
             <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
@@ -227,13 +230,20 @@
               <span>Real Estate Agency</span>
             </p>
 
-            <h2 class="h1 hero-title">Find Your Dream House By Us</h2>
+            <h2 class="h1 hero-title">Find Your Dream Home</h2>
 
             <p class="hero-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+              Discover the perfect property that matches your lifestyle and preferences.
             </p>
 
-            <a href="property-search.html" class="btn">Find Properties</a>
+            <form class="hero-search">
+              <div class="search-input-group">
+                <input type="text" placeholder="Search by location, property type, or keywords" class="search-input">
+                <button type="submit" class="search-btn">
+                  <ion-icon name="search-outline"></ion-icon>
+                </button>
+              </div>
+            </form>
             
           </div>
 
@@ -252,9 +262,9 @@
         <div class="container">
 
           <figure class="about-banner">
-            <img src="/assets/images/about-banner-1.png" alt="House interior">
+            <img src="assets/images/about-banner-1.png" alt="House interior">
 
-            <img src="/assets/images/about-banner-2.jpg" alt="House interior" class="abs-img">
+            <img src="assets/images/about-banner-2.jpg" alt="House interior" class="abs-img">
           </figure>
 
           <div class="about-content">
@@ -338,7 +348,7 @@
               <div class="service-card">
 
                 <div class="card-icon">
-                  <img src="/assets/images/service-1.png" alt="Buy a home icon">
+                  <img src="assets/images/service-1.png" alt="Buy a home icon">
                 </div>
 
                 <h3 class="h3 card-title">
@@ -368,7 +378,7 @@
               <div class="service-card">
 
                 <div class="card-icon">
-                  <img src="/assets/images/service-2.png" alt="Rent a home icon">
+                  <img src="assets/images/service-2.png" alt="Rent a home icon">
                 </div>
 
                 <h3 class="h3 card-title">
@@ -398,7 +408,7 @@
               <div class="service-card">
 
                 <div class="card-icon">
-                  <img src="/assets/images/service-3.png" alt="Sell a home icon">
+                  <img src="assets/images/service-3.png" alt="Sell a home icon">
                 </div>
 
                 <h3 class="h3 card-title">
@@ -452,7 +462,7 @@
                 <figure class="card-banner">
 
                   <a href="#">
-                    <img src="/assets/images/property-1.jpg" alt="New Apartment Nice View" class="w-100">
+                    <img src="assets/images/property-1.jpg" alt="New Apartment Nice View" class="w-100">
                   </a>
 
                   <div class="card-badge green">For Rent</div>
@@ -537,7 +547,7 @@
                   <div class="card-author">
 
                     <figure class="author-avatar">
-                      <img src="/assets/images/author.jpg" alt="William Seklo" class="w-100">
+                      <img src="assets/images/author.jpg" alt="William Seklo" class="w-100">
                     </figure>
 
                     <div>
@@ -581,7 +591,7 @@
                 <figure class="card-banner">
 
                   <a href="#">
-                    <img src="/assets/images/property-1.jpg" alt="Luxury Penthouse in Phoenix" class="w-100">
+                    <img src="assets/images/property-1.jpg" alt="Luxury Penthouse in Phoenix" class="w-100">
                   </a>
 
                   <div class="card-badge orange">For Sale</div>
@@ -659,7 +669,7 @@
                   <div class="card-author">
 
                     <figure class="author-avatar">
-                      <img src="/assets/images/author.jpg" alt="William Seklo" class="w-100">
+                      <img src="assets/images/author.jpg" alt="William Seklo" class="w-100">
                     </figure>
 
                     <div>
@@ -703,7 +713,7 @@
                 <figure class="card-banner">
 
                   <a href="#">
-                    <img src="/assets/images/property-2.jpg" alt="Historic Townhouse in Philadelphia" class="w-100">
+                    <img src="assets/images/property-2.jpg" alt="Historic Townhouse in Philadelphia" class="w-100">
                   </a>
 
                   <div class="card-badge green">For Rent</div>
@@ -781,7 +791,7 @@
                   <div class="card-author">
 
                     <figure class="author-avatar">
-                      <img src="/assets/images/author.jpg" alt="William Seklo" class="w-100">
+                      <img src="assets/images/author.jpg" alt="William Seklo" class="w-100">
                     </figure>
 
                     <div>
@@ -825,7 +835,7 @@
                 <figure class="card-banner">
 
                   <a href="#">
-                    <img src="/assets/images/property-3.jpg" alt="Modern Waterfront Condo" class="w-100">
+                    <img src="assets/images/property-3.jpg" alt="Modern Waterfront Condo" class="w-100">
                   </a>
 
                   <div class="card-badge orange">For Sale</div>
@@ -903,7 +913,7 @@
                   <div class="card-author">
 
                     <figure class="author-avatar">
-                      <img src="/assets/images/author.jpg" alt="William Seklo" class="w-100">
+                      <img src="assets/images/author.jpg" alt="William Seklo" class="w-100">
                     </figure>
 
                     <div>
@@ -947,7 +957,7 @@
                 <figure class="card-banner">
 
                   <a href="#">
-                    <img src="/assets/images/property-4.jpg" alt="Beachfront Villa in Miami" class="w-100">
+                    <img src="assets/images/property-4.jpg" alt="Beachfront Villa in Miami" class="w-100">
                   </a>
 
                   <div class="card-badge orange">For Sale</div>
@@ -1025,7 +1035,7 @@
                   <div class="card-author">
 
                     <figure class="author-avatar">
-                      <img src="/assets/images/author.jpg" alt="William Seklo" class="w-100">
+                      <img src="assets/images/author.jpg" alt="William Seklo" class="w-100">
                     </figure>
 
                     <div>
@@ -1069,7 +1079,7 @@
                 <figure class="card-banner">
 
                   <a href="#">
-                    <img src="/assets/images/property-1.jpg" alt="Urban Loft in Dallas" class="w-100">
+                    <img src="assets/images/property-1.jpg" alt="Urban Loft in Dallas" class="w-100">
                   </a>
 
                   <div class="card-badge green">For Rent</div>
@@ -1147,7 +1157,7 @@
                   <div class="card-author">
 
                     <figure class="author-avatar">
-                      <img src="/assets/images/author.jpg" alt="William Seklo" class="w-100">
+                      <img src="assets/images/author.jpg" alt="William Seklo" class="w-100">
                     </figure>
 
                     <div>
@@ -1191,7 +1201,7 @@
                 <figure class="card-banner">
 
                   <a href="#">
-                    <img src="/assets/images/property-2.jpg" alt="Victorian Home in San Francisco" class="w-100">
+                    <img src="assets/images/property-2.jpg" alt="Victorian Home in San Francisco" class="w-100">
                   </a>
 
                   <div class="card-badge orange">For Sale</div>
@@ -1269,7 +1279,7 @@
                   <div class="card-author">
 
                     <figure class="author-avatar">
-                      <img src="/assets/images/author.jpg" alt="William Seklo" class="w-100">
+                      <img src="assets/images/author.jpg" alt="William Seklo" class="w-100">
                     </figure>
 
                     <div>
@@ -1484,7 +1494,7 @@
 
                 <figure class="card-banner">
                   <a href="blog-details.html?id=1">
-                    <img src="/assets/images/blog-1.png" alt="The Most Inspiring Interior Design Of 2021" class="w-100">
+                    <img src="assets/images/blog-1.png" alt="The Most Inspiring Interior Design Of 2021" class="w-100">
                   </a>
                 </figure>
 
@@ -1538,7 +1548,7 @@
 
                 <figure class="card-banner">
                   <a href="blog-details.html?id=2">
-                    <img src="/assets/images/blog-2.jpg" alt="Recent Commercial Real Estate Transactions" class="w-100">
+                    <img src="assets/images/blog-2.jpg" alt="Recent Commercial Real Estate Transactions" class="w-100">
                   </a>
                 </figure>
 
@@ -1592,7 +1602,7 @@
 
                 <figure class="card-banner">
                   <a href="blog-details.html?id=3">
-                    <img src="/assets/images/blog-3.jpg" alt="Renovating a Living Room? Experts Share Their Secrets"
+                    <img src="assets/images/blog-3.jpg" alt="Renovating a Living Room? Experts Share Their Secrets"
                       class="w-100">
                   </a>
                 </figure>
@@ -1694,7 +1704,7 @@
         <div class="footer-brand">
 
           <a href="#" class="logo">
-            <img src="./assets/images/logo-light.png" alt="Homeverse logo">
+            <img src="assets/images/logo-light.png" alt="Homeverse logo">
           </a>
 
           <p class="section-text">
@@ -1912,25 +1922,25 @@
   <!-- 
     - custom js link
   -->
-  <script src="/assets/js/script.js" defer></script>
-  <script src="/assets/js/config.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/config.js" defer></script>
   
   <!-- Load essential scripts first -->
-  <script src="/assets/js/navigation.js" defer></script>
-  <script src="/assets/js/property-data.js" defer></script>
-  <script src="/assets/js/blog-data.js" defer></script>
+  <script src="assets/js/navigation.js" defer></script>
+  <script src="assets/js/property-data.js" defer></script>
+  <script src="assets/js/blog-data.js" defer></script>
   
   <!-- Load feature-specific scripts -->
-  <script src="/assets/js/wishlist.js" defer></script>
-  <script src="/assets/js/property-card.js" defer></script>
-  <script src="/assets/js/api-service.js" defer></script>
-  <script src="/assets/js/query-manager.js" defer></script>
-  <script src="/assets/js/enquiry.js" defer></script>
-  <script src="/assets/js/service-actions.js" defer></script>
-  <script src="/assets/js/amenities.js" defer></script>
-  <script src="/assets/js/location.js" defer></script>
-  <script src="/assets/js/property-view.js" defer></script>
-  <script src="/assets/js/buttons.js" defer></script>
+  <script src="assets/js/wishlist.js" defer></script>
+  <script src="assets/js/property-card.js" defer></script>
+  <script src="assets/js/api-service.js" defer></script>
+  <script src="assets/js/query-manager.js" defer></script>
+  <script src="assets/js/enquiry.js" defer></script>
+  <script src="assets/js/service-actions.js" defer></script>
+  <script src="assets/js/amenities.js" defer></script>
+  <script src="assets/js/location.js" defer></script>
+  <script src="assets/js/property-view.js" defer></script>
+  <script src="assets/js/buttons.js" defer></script>
 
   <!-- 
     - ionicon link
@@ -1941,7 +1951,7 @@
   <!-- Google Maps API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places" async defer></script>
 
-  <script src="./assets/js/sarasvati.js"></script>
+  <script src="assets/js/sarasvati.js"></script>
 
 </body>
 
