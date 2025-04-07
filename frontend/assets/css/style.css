@@ -6,6 +6,24 @@
  * copyright 2022 codewithsadee
  */
 
+/* Import other CSS files */
+@import url('reset.css');
+@import url('queries.css');
+@import url('property-search.css');
+@import url('map-styles.css');
+@import url('property-3d.css');
+@import url('mortgage-calculator.css');
+@import url('home-value.css');
+@import url('enquiry.css');
+@import url('cart.css');
+@import url('wishlist.css');
+@import url('add-listing.css');
+@import url('amenities.css');
+@import url('service-actions.css');
+@import url('location.css');
+
+/* Rest of your CSS code remains the same */
+
 
 
 
@@ -74,64 +92,6 @@
   --shadow-1: 0 5px 20px 0 hsla(219, 56%, 21%, 0.1);
   --shadow-2: 0 16px 32px hsla(188, 63%, 7%, 0.1);
 
-}
-
-
-
-
-
-/*-----------------------------------*\
-  #RESET
-\*-----------------------------------*/
-
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-li { list-style: none; }
-
-a { text-decoration: none; }
-
-a,
-img,
-span,
-button,
-ion-icon { display: block; }
-
-button {
-  border: none;
-  background: none;
-  font: inherit;
-  text-align: left;
-  cursor: pointer;
-}
-
-address { font-style: normal; }
-
-ion-icon { pointer-events: none; }
-
-html {
-  font-family: var(--ff-nunito-sans);
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--white);
-  overflow-x: hidden;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track { background: var(--white); }
-
-::-webkit-scrollbar-thumb {
-  background: var(--cadet);
-  border-left: 2px solid var(--white);
 }
 
 
